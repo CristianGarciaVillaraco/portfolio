@@ -1,0 +1,42 @@
+import { PersonalInfo } from "@/types/portfolio";
+
+interface ContactProps {
+  data: PersonalInfo;
+}
+
+export default function Contact({ data }: ContactProps) {
+  return (
+    <section id="contact" className="py-20 px-6 bg-slate-800">
+      <div className="max-w-xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-white mb-4">Contacto</h2>
+        <p className="text-slate-300 mb-8">
+          ¿Tienes un proyecto en mente o quieres hablar? Escríbeme.
+        </p>
+        <a
+          href={`mailto:${data.email}`}
+          className="inline-block px-8 py-4 bg-sky-500 hover:bg-sky-400 text-white rounded-lg font-semibold text-lg transition-colors"
+        >
+          {data.email}
+        </a>
+        <div className="flex justify-center gap-6 mt-8">
+          <a
+            href={data.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-sky-400 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href={data.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-sky-400 transition-colors"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
