@@ -1,0 +1,54 @@
+{
+  "personal": {
+    "name": "Cristian Garcia Villaraco Aguilar",
+    "title": "Full Stack Developer",
+    "subtitle": "Especialista en JavaScript · TypeScript · Node.js · Angular",
+    "email": "cristiangarciavillaraco@gmail.com",
+    "github": "https://github.com/Coletonosh",
+    "linkedin": "https://www.linkedin.com/in/cristian-garcia-villaraco-aguilar/",
+    "location": "España",
+    "about": "Desarrollador Full Stack con experiencia en tecnologías JavaScript modernas. Apasionado por construir aplicaciones web escalables, limpias y con buena experiencia de usuario. Trabajo tanto en el frontend como en el backend, con especial interés en arquitecturas bien estructuradas y código mantenible."
+  },
+  "skills": [
+    { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
+    { "category": "Backend", "items": ["Node.js", "Express", "REST APIs"] },
+    { "category": "Herramientas", "items": ["Git", "GitHub", "npm", "Webpack", "Vitest", "ESLint"] }
+  ],
+  "experience": [
+    {
+      "company": "Empresa 1",
+      "role": "Full Stack Developer",
+      "startDate": "2022-01",
+      "endDate": null,
+      "description": "Desarrollo de aplicaciones web con Angular y Node.js. Diseño e implementación de APIs REST. Mejora de rendimiento y mantenimiento de código legado."
+    },
+    {
+      "company": "Empresa 2",
+      "role": "Frontend Developer",
+      "startDate": "2020-06",
+      "endDate": "2021-12",
+      "description": "Desarrollo de interfaces con Angular y TypeScript. Integración con APIs externas. Colaboración en equipo ágil con metodología Scrum."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Personal",
+      "description": "Este mismo portfolio. Construido con Next.js 15, TypeScript y Tailwind CSS. Deploy automático a GitHub Pages.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "url": null,
+      "repo": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "Formación autodidacta",
+      "degree": "Desarrollo Web Full Stack",
+      "year": "2019 - presente",
+      "description": "Cursos, proyectos personales y experiencia profesional continua."
+    }
+  ],
+  "languages": [
+    { "name": "Español", "level": "Nativo" },
+    { "name": "Inglés", "level": "Intermedio" }
+  ]
+}
