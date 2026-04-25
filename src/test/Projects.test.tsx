@@ -6,14 +6,12 @@ import { Project } from "@/types/portfolio";
 const mockProjects: Project[] = [
   {
     name: "Mi App",
-    description: "Una aplicación genial.",
     tech: ["Angular", "Node.js"],
     url: "https://miapp.com",
     repo: "https://github.com/test/mi-app",
   },
   {
     name: "Proyecto Interno",
-    description: "Proyecto sin links.",
     tech: ["TypeScript"],
     url: null,
     repo: null,
