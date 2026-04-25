@@ -38,6 +38,13 @@ export default function Intro({ data }: IntroProps) {
       id="intro"
       className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-900 to-slate-800 relative"
     >
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(148,163,184,0.12) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
       <motion.div
         variants={container}
         initial="hidden"
