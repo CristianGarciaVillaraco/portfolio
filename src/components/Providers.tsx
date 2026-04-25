@@ -11,10 +11,25 @@ function LangSync() {
   return null;
 }
 
+function ScrollRestore() {
+  useEffect(() => {
+    const saved = sessionStorage.getItem("scrollY");
+    if (saved) window.scrollTo(0, parseInt(saved, 10));
+
+    const handleScroll = () => {
+      sessionStorage.setItem("scrollY", String(window.scrollY));
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  return null;
+}
+
 export default function Providers({ children }: { children: ReactNode }) {
   return (
     <LanguageProvider>
       <LangSync />
+      <ScrollRestore />
       {children}
     </LanguageProvider>
   );
