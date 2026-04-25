@@ -85,12 +85,15 @@ export interface Translations {
     downloadCV: string;
     available: string;
     yearsExp: string;
+    contactBtn: string;
   };
   stats: {
     years: string;
     companies: string;
     technologies: string;
   };
+  educationItems: { institution: string; degree: string; year: string }[];
+  languageItems: { name: string; level: string }[];
   projects: Record<string, ProjectTranslation>;
 }
 

@@ -2,22 +2,16 @@
 
 import { motion, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
-import { Education as EducationType, Language } from "@/types/portfolio";
 import { useTranslation } from "@/hooks/useTranslation";
 
-interface EducationProps {
-  education: EducationType[];
-  languages: Language[];
-}
-
 const levelBar: Record<string, number> = {
-  Nativo: 100,
+  Nativo: 100, Native: 100,
   C2: 90,
   C1: 78,
   B2: 62,
-  Avanzado: 78,
-  Intermedio: 55,
-  Básico: 35,
+  Avanzado: 78, Advanced: 78,
+  Intermedio: 55, Intermediate: 55,
+  Básico: 35, Basic: 35,
   A2: 22,
 };
 
@@ -31,7 +25,7 @@ const rowVariant: Variants = {
   show: { opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
-export default function Education({ education, languages }: EducationProps) {
+export default function Education() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { tr } = useTranslation();
@@ -55,7 +49,7 @@ export default function Education({ education, languages }: EducationProps) {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
           >
-            {education.map((item, i) => (
+            {tr.educationItems.map((item, i) => (
               <motion.div
                 key={i}
                 variants={rowVariant}
@@ -82,9 +76,11 @@ export default function Education({ education, languages }: EducationProps) {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-sky-400 font-semibold text-lg mb-5">{tr.sections.languages}</h3>
+            <h3 className="text-sky-400 font-semibold text-lg mb-5">
+              {tr.sections.languages}
+            </h3>
             <div className="space-y-5">
-              {languages.map((lang) => {
+              {tr.languageItems.map((lang) => {
                 const pct = levelBar[lang.level] ?? 40;
                 return (
                   <div key={lang.name}>

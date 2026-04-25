@@ -145,13 +145,35 @@
         "current": "Actualidad",
         "downloadCV": "Descargar CV",
         "available": "Disponible para nuevas oportunidades",
-        "yearsExp": "años de experiencia"
+        "yearsExp": "años de experiencia",
+        "contactBtn": "Contactar"
       },
       "stats": {
         "years": "años de experiencia",
         "companies": "empresas",
         "technologies": "tecnologías"
       },
+      "educationItems": [
+        {
+          "institution": "Fundación Esplai",
+          "degree": "Habilidades y competencias tecnológicas en Java y SQL",
+          "year": "2018"
+        },
+        {
+          "institution": "IES Segundo de Chomón",
+          "degree": "Técnico en sistemas microinformático y redes",
+          "year": "2015 – 2017"
+        },
+        {
+          "institution": "IES Segundo de Chomón",
+          "degree": "Ayudante auxiliar de electricidad y telecomunicaciones",
+          "year": "2014 – 2015"
+        }
+      ],
+      "languageItems": [
+        { "name": "Español", "level": "Nativo" },
+        { "name": "Inglés", "level": "Básico" }
+      ],
       "projects": {
         "Ibertech Heroes App": {
           "tagline": "Test técnico reconstruido con Angular moderno",
@@ -227,13 +249,35 @@
         "current": "Present",
         "downloadCV": "Download CV",
         "available": "Open to new opportunities",
-        "yearsExp": "years of experience"
+        "yearsExp": "years of experience",
+        "contactBtn": "Contact me"
       },
       "stats": {
         "years": "years of experience",
         "companies": "companies",
         "technologies": "technologies"
       },
+      "educationItems": [
+        {
+          "institution": "Fundación Esplai",
+          "degree": "Technology skills and competencies in Java and SQL",
+          "year": "2018"
+        },
+        {
+          "institution": "IES Segundo de Chomón",
+          "degree": "Technician in microcomputer systems and networks",
+          "year": "2015 – 2017"
+        },
+        {
+          "institution": "IES Segundo de Chomón",
+          "degree": "Electrical and telecommunications auxiliary",
+          "year": "2014 – 2015"
+        }
+      ],
+      "languageItems": [
+        { "name": "Spanish", "level": "Native" },
+        { "name": "English", "level": "Basic" }
+      ],
       "projects": {
         "Ibertech Heroes App": {
           "tagline": "Technical test rebuilt with modern Angular",
