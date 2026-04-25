@@ -31,6 +31,7 @@ function runCommand(cmd: string): OutputLine[] | null {
         { text: "  skills    – tech stack" },
         { text: "  projects  – featured projects" },
         { text: "  contact   – get in touch" },
+        { text: "  theme     – color palette" },
         { text: "  clear     – clear screen" },
         { text: "  exit      – close terminal" },
       ];
@@ -59,6 +60,18 @@ function runCommand(cmd: string): OutputLine[] | null {
         { text: `email:    ${personal.email}` },
         { text: `github:   ${personal.github}` },
         { text: `linkedin: ${personal.linkedin}` },
+      ];
+    case "theme":
+      return [
+        { text: "Portfolio color palette:" },
+        { text: "  Background   slate-900   #0f172a" },
+        { text: "  Surface      slate-800   #1e293b" },
+        { text: "  Border       slate-700   #334155" },
+        { text: "  Muted text   slate-400   #94a3b8" },
+        { text: "  Body text    slate-300   #cbd5e1" },
+        { text: "  Accent       sky-400     #38bdf8" },
+        { text: "  Accent+      sky-500     #0ea5e9" },
+        { text: "  Available    green-400   #4ade80" },
       ];
     case "clear":
       return null;
