@@ -166,7 +166,8 @@
         "downloadCV": "Descargar CV",
         "available": "Disponible para nuevas oportunidades",
         "yearsExp": "años de experiencia",
-        "contactBtn": "Contactar"
+        "contactBtn": "Contactar",
+        "comingSoon": "Próximamente"
       },
       "stats": {
         "years": "años de experiencia",
@@ -289,7 +290,8 @@
         "downloadCV": "Download CV",
         "available": "Open to new opportunities",
         "yearsExp": "years of experience",
-        "contactBtn": "Contact me"
+        "contactBtn": "Contact me",
+        "comingSoon": "Coming soon"
       },
       "stats": {
         "years": "years of experience",

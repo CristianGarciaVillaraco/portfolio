@@ -36,6 +36,12 @@ export default function Projects({ data }: ProjectsProps) {
           {tr.sections.projects}
         </motion.h2>
 
+        {data.length === 0 && (
+          <p className="text-slate-400 text-center mt-4">
+            {tr.ui.comingSoon ?? "Próximamente"}
+          </p>
+        )}
+
         <motion.div
           ref={ref}
           variants={container}
@@ -44,7 +50,7 @@ export default function Projects({ data }: ProjectsProps) {
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {data.map((project) => {
-            const proj = tr.projects[project.name];
+            const proj = tr.projects?.[project.name];
             return (
               <motion.div
                 key={project.name}
