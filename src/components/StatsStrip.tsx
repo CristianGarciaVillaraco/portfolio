@@ -36,7 +36,7 @@ export default function StatsStrip({
   ];
 
   return (
-    <section className="bg-slate-800/40 border-y border-slate-700/40 py-10">
+    <section className="bg-slate-800/40 border-y border-slate-700/40 py-10 dot-bg">
       <div className="max-w-4xl mx-auto px-6 grid grid-cols-3 gap-6 text-center">
         {stats.map(({ value, label }, i) => (
           <motion.div

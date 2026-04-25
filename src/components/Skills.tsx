@@ -35,7 +35,7 @@ export default function Skills({ data }: SkillsProps) {
   const { tr } = useTranslation();
 
   return (
-    <section id="skills" className="py-20 px-6 bg-slate-900">
+    <section id="skills" className="py-20 px-6 bg-slate-900 dot-bg">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
