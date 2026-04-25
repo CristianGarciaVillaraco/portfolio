@@ -28,7 +28,7 @@ export default function Home() {
         <HowIWork />
         <Skills data={data.skills} />
         <Experience data={data.experience} />
-        <Education education={data.education} languages={data.languages} />
+        <Education />
         <Projects data={data.projects} />
         <Contact data={data.personal} />
       </main>

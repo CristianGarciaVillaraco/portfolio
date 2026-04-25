@@ -81,7 +81,7 @@ export default function Intro({ data }: IntroProps) {
             whileTap={{ scale: 0.97 }}
             className="px-6 py-3 bg-sky-500 hover:bg-sky-400 text-white rounded-lg font-medium transition-colors"
           >
-            Contactar
+            {tr.ui.contactBtn}
           </motion.a>
           <motion.a
             href="/cv.pdf"
