@@ -90,6 +90,7 @@ export interface Translations {
     available: string;
     yearsExp: string;
     contactBtn: string;
+    comingSoon: string;
   };
   stats: {
     years: string;
