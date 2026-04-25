@@ -125,6 +125,11 @@
         "available": "Disponible para nuevas oportunidades",
         "yearsExp": "años de experiencia"
       },
+      "stats": {
+        "years": "años de experiencia",
+        "companies": "empresas",
+        "technologies": "tecnologías"
+      },
       "projects": {
         "Ibertech Heroes App": {
           "tagline": "Test técnico reconstruido con Angular moderno",
@@ -180,6 +185,11 @@
         "downloadCV": "Download CV",
         "available": "Open to new opportunities",
         "yearsExp": "years of experience"
+      },
+      "stats": {
+        "years": "years of experience",
+        "companies": "companies",
+        "technologies": "technologies"
       },
       "projects": {
         "Ibertech Heroes App": {

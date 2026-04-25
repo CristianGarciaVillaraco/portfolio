@@ -82,6 +82,11 @@ export interface Translations {
     available: string;
     yearsExp: string;
   };
+  stats: {
+    years: string;
+    companies: string;
+    technologies: string;
+  };
   projects: Record<string, ProjectTranslation>;
 }
 
