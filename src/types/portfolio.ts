@@ -1,12 +1,11 @@
 export interface PersonalInfo {
   name: string;
   title: string;
-  subtitle: string;
   email: string;
+  phone?: string;
   github: string;
   linkedin: string;
   location: string;
-  about: string;
 }
 
 export interface SkillGroup {
@@ -17,14 +16,16 @@ export interface SkillGroup {
 export interface Experience {
   company: string;
   role: string;
+  location?: string;
   startDate: string;
   endDate: string | null;
+  companyUrl?: string | null;
   description: string;
+  tech?: string[];
 }
 
 export interface Project {
   name: string;
-  description: string;
   tech: string[];
   url: string | null;
   repo: string | null;
@@ -34,12 +35,50 @@ export interface Education {
   institution: string;
   degree: string;
   year: string;
-  description: string;
 }
 
 export interface Language {
   name: string;
   level: string;
+}
+
+export interface ProjectTranslation {
+  tagline: string;
+  description: string;
+  highlights: string[];
+}
+
+export interface Translations {
+  nav: {
+    about: string;
+    skills: string;
+    experience: string;
+    education: string;
+    projects: string;
+    contact: string;
+  };
+  sections: {
+    about: string;
+    skills: string;
+    experience: string;
+    education: string;
+    languages: string;
+    projects: string;
+    contact: string;
+  };
+  personal: {
+    subtitle: string;
+    about: string;
+  };
+  contact: {
+    cta: string;
+  };
+  ui: {
+    demo: string;
+    code: string;
+    current: string;
+  };
+  projects: Record<string, ProjectTranslation>;
 }
 
 export interface PortfolioData {
@@ -49,4 +88,5 @@ export interface PortfolioData {
   projects: Project[];
   education: Education[];
   languages: Language[];
+  i18n: { es: Translations; en: Translations };
 }

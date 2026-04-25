@@ -1,54 +1,201 @@
 {
   "personal": {
     "name": "Cristian Garcia Villaraco Aguilar",
-    "title": "Full Stack Developer",
-    "subtitle": "Especialista en JavaScript · TypeScript · Node.js · Angular",
+    "title": "Fullstack Developer",
     "email": "cristiangarciavillaraco@gmail.com",
-    "github": "https://github.com/Coletonosh",
+    "phone": "+34 676 336 823",
+    "github": "https://github.com/CristianGarciaVillaraco",
     "linkedin": "https://www.linkedin.com/in/cristian-garcia-villaraco-aguilar/",
-    "location": "España",
-    "about": "Desarrollador Full Stack con experiencia en tecnologías JavaScript modernas. Apasionado por construir aplicaciones web escalables, limpias y con buena experiencia de usuario. Trabajo tanto en el frontend como en el backend, con especial interés en arquitecturas bien estructuradas y código mantenible."
+    "location": "Zaragoza, España"
   },
   "skills": [
-    { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-    { "category": "Backend", "items": ["Node.js", "Express", "REST APIs"] },
-    { "category": "Herramientas", "items": ["Git", "GitHub", "npm", "Webpack", "Vitest", "ESLint"] }
+    { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "PrimeNG", "Paper.js"] },
+    { "category": "Backend", "items": ["Node.js", "Express.js", "MongoDB", "REST APIs"] },
+    { "category": "Herramientas", "items": ["Git", "GitLab CI/CD", "SonarQube", "Mocha", "Chai", "npm"] }
   ],
   "experience": [
     {
-      "company": "Empresa 1",
-      "role": "Full Stack Developer",
-      "startDate": "2022-01",
+      "company": "Moontech Industrial Solutions",
+      "role": "Desarrollador Fullstack",
+      "location": "Zaragoza",
+      "startDate": "2025-12",
       "endDate": null,
-      "description": "Desarrollo de aplicaciones web con Angular y Node.js. Diseño e implementación de APIs REST. Mejora de rendimiento y mantenimiento de código legado."
+      "companyUrl": "https://moontech-industrial.com/",
+      "description": "Desarrollo de interfaces web con Angular 18/19 en arquitectura de microfrontends (shell + librería de componentes compartidos) para el sistema ERIMS de gestión de flotas robóticas (AGVs/AMRs). Implementación de aplicaciones internas en Node.js para configuración de lógica de control robótico con MongoDB. Creación de funciones JavaScript para orquestación intralogística y automatización de procesos industriales.",
+      "tech": ["Angular 18/19", "TypeScript", "Node.js", "MongoDB", "PrimeNG", "GitLab CI/CD"]
     },
     {
-      "company": "Empresa 2",
-      "role": "Frontend Developer",
-      "startDate": "2020-06",
+      "company": "Ibertech IT — Indra",
+      "role": "Desarrollador Web Senior",
+      "location": "Remoto",
+      "startDate": "2022-11",
+      "endDate": "2025-08",
+      "companyUrl": "https://www.indracompany.com",
+      "description": "Desarrollo de módulos en Angular dentro de una arquitectura de microservicios: listados, creación, edición y detalle de registros. Implementación de generación de PDFs con plantillas para reportes. Participación en un módulo avanzado con Paper.js para visualización gráfica de infraestructuras ferroviarias. Refactorizaciones, cobertura de tests unitarios y métricas con SonarQube.",
+      "tech": ["Angular", "TypeScript", "JavaScript", "Paper.js", "SonarQube", "Git"]
+    },
+    {
+      "company": "Ibertech IT — Inetum",
+      "role": "Desarrollador Web Senior",
+      "location": "Remoto",
+      "startDate": "2022-06",
+      "endDate": "2022-10",
+      "companyUrl": "https://www.inetum.com",
+      "description": "Implementación de listados y formularios interactivos en Angular, incluyendo integración con menú de navegación. Colaboración en el desarrollo de la primera versión funcional para el cliente.",
+      "tech": ["Angular", "TypeScript", "JavaScript", "Bootstrap", "Git"]
+    },
+    {
+      "company": "NTT Data",
+      "role": "Desarrollador Fullstack Junior",
+      "location": "Zaragoza",
+      "startDate": "2018-04",
       "endDate": "2021-12",
-      "description": "Desarrollo de interfaces con Angular y TypeScript. Integración con APIs externas. Colaboración en equipo ágil con metodología Scrum."
+      "companyUrl": "https://www.nttdata.com",
+      "description": "Desarrollo de un generador automático de módulos y componentes Angular en ExpressJS + TypeScript a partir de plantillas. Tests unitarios, editor gráfico drag & drop para diseño de modelos, y refactorizaciones con patrones funcionales usando Ramda. Soporte en aplicación ExpressJS de validación de modelos JSON.",
+      "tech": ["Node.js", "ExpressJS", "Angular", "TypeScript", "Mocha", "Chai", "Ramda"]
     }
   ],
   "projects": [
     {
-      "name": "Portfolio Personal",
-      "description": "Este mismo portfolio. Construido con Next.js 15, TypeScript y Tailwind CSS. Deploy automático a GitHub Pages.",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "name": "Ibertech Heroes App",
+      "tech": ["Angular 20", "TypeScript", "Angular Material", "Dexie", "Playwright"],
       "url": null,
-      "repo": null
+      "repo": "https://github.com/CristianGarciaVillaraco/ibertech-heroes-test"
+    },
+    {
+      "name": "OPCG Vault",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "SQLite", "Auth.js"],
+      "url": null,
+      "repo": "https://github.com/CristianGarciaVillaraco/opcg-vault"
     }
   ],
   "education": [
     {
-      "institution": "Formación autodidacta",
-      "degree": "Desarrollo Web Full Stack",
-      "year": "2019 - presente",
-      "description": "Cursos, proyectos personales y experiencia profesional continua."
+      "institution": "Fundación Esplai",
+      "degree": "Habilidades y competencias tecnológicas en Java y SQL",
+      "year": "2018"
+    },
+    {
+      "institution": "IES Segundo de Chomón",
+      "degree": "Técnico en sistemas microinformático y redes",
+      "year": "2015 – 2017"
+    },
+    {
+      "institution": "IES Segundo de Chomón",
+      "degree": "Ayudante auxiliar de electricidad y telecomunicaciones",
+      "year": "2014 – 2015"
     }
   ],
   "languages": [
     { "name": "Español", "level": "Nativo" },
-    { "name": "Inglés", "level": "Intermedio" }
-  ]
+    { "name": "Inglés", "level": "Básico" }
+  ],
+  "i18n": {
+    "es": {
+      "nav": {
+        "about": "Sobre mí",
+        "skills": "Skills",
+        "experience": "Experiencia",
+        "education": "Formación",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+      },
+      "sections": {
+        "about": "Sobre mí",
+        "skills": "Tecnologías",
+        "experience": "Experiencia",
+        "education": "Formación",
+        "languages": "Idiomas",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+      },
+      "personal": {
+        "subtitle": "Especialista en Angular · TypeScript · Node.js · JavaScript",
+        "about": "Desarrollador Fullstack con experiencia en Angular y Node.js, apasionado por el aprendizaje continuo. He trabajado en proyectos industriales, sistemas de microservicios y aplicaciones internas, siempre con foco en código mantenible y arquitecturas bien estructuradas. Actualmente explorando el desarrollo de videojuegos con Godot."
+      },
+      "contact": {
+        "cta": "¿Tienes un proyecto en mente o quieres hablar? Escríbeme."
+      },
+      "ui": {
+        "demo": "Ver demo",
+        "code": "Código",
+        "current": "Actualidad"
+      },
+      "projects": {
+        "Ibertech Heroes App": {
+          "tagline": "Test técnico reconstruido con Angular moderno",
+          "description": "Aplicación CRUD completa para gestionar superhéroes. Originalmente un test técnico de admisión en 2022, reconstruida de cero para aplicar patrones modernos de Angular y buenas prácticas de arquitectura.",
+          "highlights": [
+            "Angular Signals y componentes standalone",
+            "Persistencia local con IndexedDB (Dexie)",
+            "Tests unitarios con Jasmine + E2E con Playwright",
+            "CI/CD con GitHub Actions"
+          ]
+        },
+        "OPCG Vault": {
+          "tagline": "Gestor de colección de cartas One Piece",
+          "description": "Aplicación web para gestionar colecciones personales del One Piece Card Game. Permite registrar cartas, controlar cantidades y explorar colecciones de otros usuarios.",
+          "highlights": [
+            "Catálogo de más de 3.300 cartas importadas",
+            "Autenticación con Auth.js v5",
+            "Base de datos con SQLite + Prisma ORM",
+            "Gestión de colección personal y de otros usuarios"
+          ]
+        }
+      }
+    },
+    "en": {
+      "nav": {
+        "about": "About",
+        "skills": "Skills",
+        "experience": "Experience",
+        "education": "Education",
+        "projects": "Projects",
+        "contact": "Contact"
+      },
+      "sections": {
+        "about": "About me",
+        "skills": "Technologies",
+        "experience": "Experience",
+        "education": "Education",
+        "languages": "Languages",
+        "projects": "Projects",
+        "contact": "Contact"
+      },
+      "personal": {
+        "subtitle": "Specialist in Angular · TypeScript · Node.js · JavaScript",
+        "about": "Fullstack developer with experience in Angular and Node.js, passionate about continuous learning. I have worked on industrial projects, microservice systems, and internal applications, always focusing on maintainable code and well-structured architectures. Currently exploring game development with Godot."
+      },
+      "contact": {
+        "cta": "Have a project in mind or want to talk? Send me a message."
+      },
+      "ui": {
+        "demo": "Live demo",
+        "code": "Source code",
+        "current": "Present"
+      },
+      "projects": {
+        "Ibertech Heroes App": {
+          "tagline": "Technical test rebuilt with modern Angular",
+          "description": "Full-featured CRUD application for managing superheroes. Originally an admission technical test in 2022, rebuilt from scratch to showcase modern Angular patterns and professional development practices.",
+          "highlights": [
+            "Angular Signals and standalone components",
+            "Local persistence with IndexedDB (Dexie)",
+            "Unit tests with Jasmine + E2E with Playwright",
+            "CI/CD with GitHub Actions"
+          ]
+        },
+        "OPCG Vault": {
+          "tagline": "One Piece Card Game collection manager",
+          "description": "Web application for managing personal One Piece Card Game collections. Track cards, manage quantities, and browse other users' collections.",
+          "highlights": [
+            "Catalog of over 3,300 imported cards",
+            "Authentication with Auth.js v5",
+            "Database with SQLite + Prisma ORM",
+            "Personal and community collection management"
+          ]
+        }
+      }
+    }
+  }
 }
