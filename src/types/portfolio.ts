@@ -66,6 +66,10 @@ export interface Translations {
     languages: string;
     projects: string;
     contact: string;
+    howIWork: string;
+  };
+  howIWork: {
+    principles: { title: string; body: string }[];
   };
   personal: {
     subtitle: string;
