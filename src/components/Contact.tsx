@@ -15,7 +15,7 @@ export default function Contact({ data }: ContactProps) {
     <section id="contact" className="py-20 px-6 bg-slate-800 dot-bg">
       <div className="max-w-xl mx-auto text-center">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-white mb-4">{tr.sections.contact}</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">{tr.sections.contact}</h2>
           <p className="text-slate-300 mb-8">{tr.contact.cta}</p>
           <a
             href={`mailto:${data.email}`}
