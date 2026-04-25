@@ -25,13 +25,13 @@ describe("Intro", () => {
 
   it("renders contact link", () => {
     render(<Intro data={mockPersonal} />);
-    const link = screen.getByText("Contactar");
+    const link = screen.getByRole("link", { name: /Contactar/i });
     expect(link).toHaveAttribute("href", "mailto:test@example.com");
   });
 
   it("renders GitHub link", () => {
     render(<Intro data={mockPersonal} />);
-    const link = screen.getByText("GitHub");
+    const link = screen.getByRole("link", { name: /GitHub/i });
     expect(link).toHaveAttribute("href", "https://github.com/test");
   });
 
@@ -42,7 +42,7 @@ describe("Intro", () => {
 
   it("renders CV download link", () => {
     render(<Intro data={mockPersonal} />);
-    const link = screen.getByText("Descargar CV");
+    const link = screen.getByRole("link", { name: /Descargar CV/i });
     expect(link).toHaveAttribute("href", "/cv.pdf");
   });
 
