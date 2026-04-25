@@ -6,6 +6,7 @@ export interface PersonalInfo {
   github: string;
   linkedin: string;
   location: string;
+  careerStart?: string;
 }
 
 export interface SkillGroup {
@@ -77,6 +78,9 @@ export interface Translations {
     demo: string;
     code: string;
     current: string;
+    downloadCV: string;
+    available: string;
+    yearsExp: string;
   };
   projects: Record<string, ProjectTranslation>;
 }
