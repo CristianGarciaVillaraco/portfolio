@@ -108,7 +108,8 @@
         "education": "Formación",
         "languages": "Idiomas",
         "projects": "Proyectos",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "howIWork": "Cómo trabajo"
       },
       "personal": {
         "subtitle": "Especialista en Angular · TypeScript · Node.js · JavaScript",
@@ -116,6 +117,26 @@
       },
       "contact": {
         "cta": "¿Tienes un proyecto en mente o quieres hablar? Escríbeme."
+      },
+      "howIWork": {
+        "principles": [
+          {
+            "title": "Primero el test",
+            "body": "Si no puedo probar algo, primero me pregunto por qué. TDD no es solo metodología, es una forma de pensar el código."
+          },
+          {
+            "title": "Código que habla",
+            "body": "Prefiero nombres descriptivos a comentarios. El mejor comentario es el que no hace falta escribir."
+          },
+          {
+            "title": "IA como copiloto",
+            "body": "Uso Claude a diario, en proyectos personales y en Moontech. Acelera el trabajo, pero el criterio técnico siempre es mío."
+          },
+          {
+            "title": "Aprendizaje continuo",
+            "body": "Cada proyecto enseña algo. Actualmente explorando Godot y desarrollo de videojuegos."
+          }
+        ]
       },
       "ui": {
         "demo": "Ver demo",
@@ -169,7 +190,8 @@
         "education": "Education",
         "languages": "Languages",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "howIWork": "How I work"
       },
       "personal": {
         "subtitle": "Specialist in Angular · TypeScript · Node.js · JavaScript",
@@ -177,6 +199,26 @@
       },
       "contact": {
         "cta": "Have a project in mind or want to talk? Send me a message."
+      },
+      "howIWork": {
+        "principles": [
+          {
+            "title": "Test first",
+            "body": "If I can't test something, I first ask myself why. TDD is not just a methodology, it's a way of thinking about code."
+          },
+          {
+            "title": "Code that speaks",
+            "body": "I prefer descriptive names over comments. The best comment is the one you don't need to write."
+          },
+          {
+            "title": "AI as co-pilot",
+            "body": "I use Claude daily, in personal projects and at Moontech. It accelerates the work, but the technical judgment is always mine."
+          },
+          {
+            "title": "Continuous learning",
+            "body": "Every project teaches something. Currently exploring Godot and game development."
+          }
+        ]
       },
       "ui": {
         "demo": "Live demo",
