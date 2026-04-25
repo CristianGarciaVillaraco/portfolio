@@ -34,7 +34,7 @@ export default function Experience({ data }: ExperienceProps) {
 
   return (
     <section id="experience" className="py-20 px-6 bg-slate-800 dot-bg">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-white mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}

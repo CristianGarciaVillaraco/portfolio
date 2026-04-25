@@ -117,6 +117,25 @@
         "subtitle": "Especialista en Angular · TypeScript · Node.js · JavaScript",
         "about": "Desarrollador Fullstack con experiencia en Angular y Node.js, apasionado por el aprendizaje continuo. He trabajado en proyectos industriales, sistemas de microservicios y aplicaciones internas, siempre con foco en código mantenible y arquitecturas bien estructuradas. Actualmente explorando el desarrollo de videojuegos con Godot."
       },
+      "about": {
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Fullstack desde 2018",
+            "body": "Angular, TypeScript y Node.js en proyectos industriales, microservicios y aplicaciones internas. Foco en código mantenible y arquitecturas bien estructuradas."
+          },
+          {
+            "icon": "bolt",
+            "title": "Aprendizaje continuo",
+            "body": "Autodidacta por convicción. Explorando Godot para videojuegos e integrando IA en el flujo de trabajo diario."
+          },
+          {
+            "icon": "users",
+            "title": "Adaptabilidad",
+            "body": "He trabajado en stacks y contextos muy distintos. Lo que me interesa es entender los principios detrás de cada tecnología, no acumular etiquetas."
+          }
+        ]
+      },
       "contact": {
         "cta": "¿Tienes un proyecto en mente o quieres hablar? Escríbeme."
       },
@@ -220,6 +239,25 @@
       "personal": {
         "subtitle": "Specialist in Angular · TypeScript · Node.js · JavaScript",
         "about": "Fullstack developer with experience in Angular and Node.js, passionate about continuous learning. I have worked on industrial projects, microservice systems, and internal applications, always focusing on maintainable code and well-structured architectures. Currently exploring game development with Godot."
+      },
+      "about": {
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Fullstack since 2018",
+            "body": "Angular, TypeScript, and Node.js on industrial projects, microservices, and internal applications. Focus on maintainable code and well-structured architectures."
+          },
+          {
+            "icon": "bolt",
+            "title": "Continuous learning",
+            "body": "Self-taught by choice. Exploring Godot for game development and integrating AI into my daily workflow."
+          },
+          {
+            "icon": "users",
+            "title": "Adaptability",
+            "body": "I've worked across very different stacks and contexts. What interests me is understanding the principles behind each technology, not collecting labels."
+          }
+        ]
       },
       "contact": {
         "cta": "Have a project in mind or want to talk? Send me a message."

@@ -69,6 +69,9 @@ export interface Translations {
     contact: string;
     howIWork: string;
   };
+  about: {
+    cards: { icon: string; title: string; body: string }[];
+  };
   howIWork: {
     principles: { title: string; body: string }[];
   };
