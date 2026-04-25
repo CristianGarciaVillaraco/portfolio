@@ -7,7 +7,8 @@
     "github": "https://github.com/CristianGarciaVillaraco",
     "linkedin": "https://www.linkedin.com/in/cristian-garcia-villaraco-aguilar/",
     "location": "Zaragoza, España",
-    "careerStart": "2018-04"
+    "careerStart": "2018-04",
+    "photo": "/photo.jpg"
   },
   "skills": [
     { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "PrimeNG", "Paper.js"] },

@@ -7,6 +7,7 @@ export interface PersonalInfo {
   linkedin: string;
   location: string;
   careerStart?: string;
+  photo?: string;
 }
 
 export interface SkillGroup {
