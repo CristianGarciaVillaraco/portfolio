@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Intro from "@/components/Intro";
+import Landing from "@/components/Landing";
 import { PersonalInfo } from "@/types/portfolio";
 
 const mockPersonal: PersonalInfo = {
@@ -12,42 +12,42 @@ const mockPersonal: PersonalInfo = {
   location: "España",
 };
 
-describe("Intro", () => {
+describe("Landing", () => {
   it("renders the name", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     expect(screen.getByText("Cristian Garcia")).toBeInTheDocument();
   });
 
   it("renders the title", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     expect(screen.getByText("Full Stack Developer")).toBeInTheDocument();
   });
 
   it("renders contact link", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     const link = screen.getByRole("link", { name: /Contactar/i });
     expect(link).toHaveAttribute("href", "mailto:test@example.com");
   });
 
   it("renders GitHub link", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     const link = screen.getByRole("link", { name: /GitHub/i });
     expect(link).toHaveAttribute("href", "https://github.com/test");
   });
 
   it("renders location", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     expect(screen.getByText(/España/)).toBeInTheDocument();
   });
 
   it("renders CV download link", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     const link = screen.getByRole("link", { name: /Descargar CV/i });
     expect(link).toHaveAttribute("href", "/cv.pdf");
   });
 
   it("renders availability badge", () => {
-    render(<Intro data={mockPersonal} />);
+    render(<Landing data={mockPersonal} />);
     expect(
       screen.getByText("Disponible para nuevas oportunidades")
     ).toBeInTheDocument();
