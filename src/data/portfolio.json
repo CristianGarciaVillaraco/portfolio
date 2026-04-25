@@ -12,7 +12,8 @@
   "skills": [
     { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "PrimeNG", "Paper.js"] },
     { "category": "Backend", "items": ["Node.js", "Express.js", "MongoDB", "REST APIs"] },
-    { "category": "Herramientas", "items": ["Git", "GitLab CI/CD", "SonarQube", "Mocha", "Chai", "npm"] }
+    { "category": "Herramientas", "items": ["Git", "GitLab CI/CD", "SonarQube", "Jest", "Mocha", "Chai", "npm"] },
+    { "category": "IA & Workflow", "items": ["Claude", "Prompt Engineering", "AI-Assisted Dev"] }
   ],
   "experience": [
     {
