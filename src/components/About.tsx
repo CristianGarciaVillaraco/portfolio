@@ -1,19 +1,18 @@
-import { PersonalInfo } from "@/types/portfolio";
+"use client";
 
-interface AboutProps {
-  data: PersonalInfo;
-}
+import AnimatedSection from "./AnimatedSection";
+import { useTranslation } from "@/hooks/useTranslation";
 
-export default function About({ data }: AboutProps) {
+export default function About() {
+  const { tr } = useTranslation();
+
   return (
     <section id="about" className="py-20 px-6 bg-slate-800">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">
-          Sobre mí
-        </h2>
-        <p className="text-slate-300 text-lg leading-relaxed text-center">
-          {data.about}
-        </p>
+        <AnimatedSection className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-8">{tr.sections.about}</h2>
+          <p className="text-slate-300 text-lg leading-relaxed">{tr.personal.about}</p>
+        </AnimatedSection>
       </div>
     </section>
   );

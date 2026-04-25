@@ -6,12 +6,10 @@ import { PersonalInfo } from "@/types/portfolio";
 const mockPersonal: PersonalInfo = {
   name: "Cristian Garcia",
   title: "Full Stack Developer",
-  subtitle: "JS · TS · Angular · Node.js",
   email: "test@example.com",
   github: "https://github.com/test",
   linkedin: "https://linkedin.com/in/test",
   location: "España",
-  about: "About text",
 };
 
 describe("Hero", () => {

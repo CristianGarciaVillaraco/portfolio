@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 
 const data = portfolioData as PortfolioData;
@@ -16,9 +17,10 @@ export default function Home() {
       <Navbar />
       <main className="pt-14">
         <Hero data={data.personal} />
-        <About data={data.personal} />
+        <About />
         <Skills data={data.skills} />
         <Experience data={data.experience} />
+        <Education education={data.education} languages={data.languages} />
         <Projects data={data.projects} />
         <Contact data={data.personal} />
       </main>
