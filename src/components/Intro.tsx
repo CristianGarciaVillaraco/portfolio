@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { PersonalInfo } from "@/types/portfolio";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -43,6 +44,19 @@ export default function Intro({ data }: IntroProps) {
         animate="show"
         className="flex flex-col items-center"
       >
+        {data.photo && (
+          <motion.div variants={item} className="mb-6">
+            <Image
+              src={data.photo}
+              alt={data.name}
+              width={120}
+              height={120}
+              className="rounded-full object-cover ring-4 ring-slate-700"
+              priority
+            />
+          </motion.div>
+        )}
+
         <motion.div
           variants={item}
           className="flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs text-slate-300"
