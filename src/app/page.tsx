@@ -10,6 +10,7 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import HowIWork from "@/components/HowIWork";
 import Contact from "@/components/Contact";
+import TerminalEgg from "@/components/TerminalEgg";
 
 const data = portfolioData as PortfolioData;
 
@@ -35,6 +36,7 @@ export default function Home() {
       <footer className="bg-slate-900 text-center text-slate-500 text-sm py-6">
         © {new Date().getFullYear()} {data.personal.name}
       </footer>
+      <TerminalEgg />
     </>
   );
 }
