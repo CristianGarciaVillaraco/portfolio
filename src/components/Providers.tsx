@@ -13,8 +13,10 @@ function LangSync() {
 
 function ScrollRestore() {
   useEffect(() => {
-    const saved = sessionStorage.getItem("scrollY");
-    if (saved) window.scrollTo(0, parseInt(saved, 10));
+    if (!window.location.hash) {
+      const saved = sessionStorage.getItem("scrollY");
+      if (saved) window.scrollTo(0, parseInt(saved, 10));
+    }
 
     const handleScroll = () => {
       sessionStorage.setItem("scrollY", String(window.scrollY));
