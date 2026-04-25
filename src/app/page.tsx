@@ -26,9 +26,15 @@ export default function Home() {
           skills={data.skills}
         />
         <About />
+        <div aria-hidden className="relative h-px">
+          <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
+        </div>
         <HowIWork />
         <Skills data={data.skills} />
         <Experience data={data.experience} />
+        <div aria-hidden className="relative h-px">
+          <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
+        </div>
         <Education />
         <Projects data={data.projects} />
         <Contact data={data.personal} />
