@@ -1,7 +1,7 @@
 import portfolioData from "@/data/portfolio.json";
 import { PortfolioData } from "@/types/portfolio";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Intro from "@/components/Intro";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className="pt-14">
-        <Hero data={data.personal} />
+        <Intro data={data.personal} />
         <About />
         <Skills data={data.skills} />
         <Experience data={data.experience} />

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Hero from "@/components/Hero";
+import Intro from "@/components/Intro";
 import { PersonalInfo } from "@/types/portfolio";
 
 const mockPersonal: PersonalInfo = {
@@ -12,31 +12,44 @@ const mockPersonal: PersonalInfo = {
   location: "España",
 };
 
-describe("Hero", () => {
+describe("Intro", () => {
   it("renders the name", () => {
-    render(<Hero data={mockPersonal} />);
+    render(<Intro data={mockPersonal} />);
     expect(screen.getByText("Cristian Garcia")).toBeInTheDocument();
   });
 
   it("renders the title", () => {
-    render(<Hero data={mockPersonal} />);
+    render(<Intro data={mockPersonal} />);
     expect(screen.getByText("Full Stack Developer")).toBeInTheDocument();
   });
 
   it("renders contact link", () => {
-    render(<Hero data={mockPersonal} />);
+    render(<Intro data={mockPersonal} />);
     const link = screen.getByText("Contactar");
     expect(link).toHaveAttribute("href", "mailto:test@example.com");
   });
 
   it("renders GitHub link", () => {
-    render(<Hero data={mockPersonal} />);
+    render(<Intro data={mockPersonal} />);
     const link = screen.getByText("GitHub");
     expect(link).toHaveAttribute("href", "https://github.com/test");
   });
 
   it("renders location", () => {
-    render(<Hero data={mockPersonal} />);
-    expect(screen.getByText("España")).toBeInTheDocument();
+    render(<Intro data={mockPersonal} />);
+    expect(screen.getByText(/España/)).toBeInTheDocument();
+  });
+
+  it("renders CV download link", () => {
+    render(<Intro data={mockPersonal} />);
+    const link = screen.getByText("Descargar CV");
+    expect(link).toHaveAttribute("href", "/cv.pdf");
+  });
+
+  it("renders availability badge", () => {
+    render(<Intro data={mockPersonal} />);
+    expect(
+      screen.getByText("Disponible para nuevas oportunidades")
+    ).toBeInTheDocument();
   });
 });

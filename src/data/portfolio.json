@@ -6,7 +6,8 @@
     "phone": "+34 676 336 823",
     "github": "https://github.com/CristianGarciaVillaraco",
     "linkedin": "https://www.linkedin.com/in/cristian-garcia-villaraco-aguilar/",
-    "location": "Zaragoza, España"
+    "location": "Zaragoza, España",
+    "careerStart": "2018-04"
   },
   "skills": [
     { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "PrimeNG", "Paper.js"] },
@@ -119,7 +120,10 @@
       "ui": {
         "demo": "Ver demo",
         "code": "Código",
-        "current": "Actualidad"
+        "current": "Actualidad",
+        "downloadCV": "Descargar CV",
+        "available": "Disponible para nuevas oportunidades",
+        "yearsExp": "años de experiencia"
       },
       "projects": {
         "Ibertech Heroes App": {
@@ -172,7 +176,10 @@
       "ui": {
         "demo": "Live demo",
         "code": "Source code",
-        "current": "Present"
+        "current": "Present",
+        "downloadCV": "Download CV",
+        "available": "Open to new opportunities",
+        "yearsExp": "years of experience"
       },
       "projects": {
         "Ibertech Heroes App": {
