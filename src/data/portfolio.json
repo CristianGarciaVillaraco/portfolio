@@ -122,20 +122,20 @@
       "howIWork": {
         "principles": [
           {
-            "title": "Primero el test",
-            "body": "Si no puedo probar algo, primero me pregunto por qué. TDD no es solo metodología, es una forma de pensar el código."
+            "title": "Los tests son parte del código",
+            "body": "Para mí testear no es un paso extra, es parte de construir. Si algo es difícil de probar, es señal de que el diseño puede mejorar."
           },
           {
-            "title": "Código que habla",
-            "body": "Prefiero nombres descriptivos a comentarios. El mejor comentario es el que no hace falta escribir."
+            "title": "Nombres sobre comentarios",
+            "body": "Intento que el código se entienda por los nombres. Cuando hace falta documentar, lo documento sin problema, pero primero pregunto si el nombre podría hacer ese trabajo."
           },
           {
-            "title": "IA como copiloto",
-            "body": "Uso Claude a diario, en proyectos personales y en Moontech. Acelera el trabajo, pero el criterio técnico siempre es mío."
+            "title": "IA como herramienta, no como sustituto",
+            "body": "Uso herramientas de IA en el día a día para acelerar el trabajo. El criterio, la arquitectura y las decisiones siguen siendo mías."
           },
           {
-            "title": "Aprendizaje continuo",
-            "body": "Cada proyecto enseña algo. Actualmente explorando Godot y desarrollo de videojuegos."
+            "title": "Me adapto, no me especializo de más",
+            "body": "He pasado por stacks y contextos muy distintos. Lo que valoro es entender los principios detrás de cada tecnología, no acumular etiquetas."
           }
         ]
       },
@@ -204,20 +204,20 @@
       "howIWork": {
         "principles": [
           {
-            "title": "Test first",
-            "body": "If I can't test something, I first ask myself why. TDD is not just a methodology, it's a way of thinking about code."
+            "title": "Tests are part of the code",
+            "body": "Testing is not an extra step, it's part of building. If something is hard to test, it's a signal the design can improve."
           },
           {
-            "title": "Code that speaks",
-            "body": "I prefer descriptive names over comments. The best comment is the one you don't need to write."
+            "title": "Names over comments",
+            "body": "I try to make code understandable through naming. When documentation is needed, I write it — but first I ask if a better name could do that job."
           },
           {
-            "title": "AI as co-pilot",
-            "body": "I use Claude daily, in personal projects and at Moontech. It accelerates the work, but the technical judgment is always mine."
+            "title": "AI as a tool, not a replacement",
+            "body": "I use AI tools daily to speed up work. The judgment, architecture, and decisions remain mine."
           },
           {
-            "title": "Continuous learning",
-            "body": "Every project teaches something. Currently exploring Godot and game development."
+            "title": "I adapt, not over-specialize",
+            "body": "I've worked across different stacks and contexts. What I value is understanding the principles behind each technology, not collecting labels."
           }
         ]
       },
