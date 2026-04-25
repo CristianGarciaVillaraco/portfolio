@@ -7,7 +7,7 @@ export default function About() {
   const { tr } = useTranslation();
 
   return (
-    <section id="about" className="py-20 px-6 bg-slate-800">
+    <section id="about" className="py-20 px-6 bg-slate-800 dot-bg">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection className="text-center">
           <h2 className="text-3xl font-bold text-white mb-8">{tr.sections.about}</h2>

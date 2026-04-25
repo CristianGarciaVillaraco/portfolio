@@ -12,7 +12,7 @@ export default function Contact({ data }: ContactProps) {
   const { tr } = useTranslation();
 
   return (
-    <section id="contact" className="py-20 px-6 bg-slate-800">
+    <section id="contact" className="py-20 px-6 bg-slate-800 dot-bg">
       <div className="max-w-xl mx-auto text-center">
         <AnimatedSection>
           <h2 className="text-3xl font-bold text-white mb-4">{tr.sections.contact}</h2>

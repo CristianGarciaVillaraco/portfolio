@@ -31,7 +31,7 @@ export default function Education() {
   const { tr } = useTranslation();
 
   return (
-    <section id="education" className="py-20 px-6 bg-slate-900">
+    <section id="education" className="py-20 px-6 bg-slate-900 dot-bg">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <motion.h2
           className="text-3xl font-bold text-white mb-12 text-center"

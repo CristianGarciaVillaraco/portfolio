@@ -33,7 +33,7 @@ export default function Experience({ data }: ExperienceProps) {
   const locale = lang === "en" ? "en-US" : "es-ES";
 
   return (
-    <section id="experience" className="py-20 px-6 bg-slate-800">
+    <section id="experience" className="py-20 px-6 bg-slate-800 dot-bg">
       <div className="max-w-3xl mx-auto">
         <motion.h2
           className="text-3xl font-bold text-white mb-12 text-center"
