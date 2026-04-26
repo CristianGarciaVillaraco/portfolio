@@ -28,6 +28,9 @@ function useActiveSection(ids: string[]): string {
   return active;
 }
 
+const NAV_HREFS = ["#about", "#skills", "#experience", "#education", "#projects", "#contact"];
+const SECTION_IDS = NAV_HREFS.map((h) => h.slice(1));
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { tr, lang, setLang } = useTranslation();
@@ -41,13 +44,18 @@ export default function Navbar() {
     { href: "#contact", label: tr.nav.contact },
   ];
 
-  const sectionIds = links.map((l) => l.href.slice(1));
-  const activeSection = useActiveSection(sectionIds);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-700">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <span className="text-sky-400 font-bold text-lg">CG</span>
+        <a
+          href="#landing"
+          className="text-sky-400 font-bold text-lg hover:text-sky-300 transition-colors"
+          aria-label="Inicio"
+        >
+          CG
+        </a>
         <ul className="hidden md:flex gap-6">
           {links.map((l) => {
             const isActive = activeSection === l.href.slice(1);

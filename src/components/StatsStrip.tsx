@@ -3,19 +3,12 @@
 import { motion } from "framer-motion";
 import { PersonalInfo, SkillGroup, Experience } from "@/types/portfolio";
 import { useTranslation } from "@/hooks/useTranslation";
+import { yearsOfExperience } from "@/lib/date";
 
 interface StatsStripProps {
   personal: PersonalInfo;
   experience: Experience[];
   skills: SkillGroup[];
-}
-
-function yearsOfExperience(startDate: string): number {
-  const [year, month] = startDate.split("-").map(Number);
-  const start = new Date(year, month - 1);
-  const now = new Date();
-  const diff = now.getFullYear() - start.getFullYear();
-  return now.getMonth() < start.getMonth() - 1 ? diff - 1 : diff;
 }
 
 export default function StatsStrip({
@@ -36,7 +29,7 @@ export default function StatsStrip({
   ];
 
   return (
-    <section className="bg-slate-800/40 border-y border-slate-700/40 py-10 dot-bg">
+    <section className="bg-slate-800/40 border-y border-slate-700/40 py-10">
       <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
         {stats.map(({ value, label }, i) => (
           <motion.div
