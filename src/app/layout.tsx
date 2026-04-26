@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: portfolioData.i18n.es.personal.about,
     url: baseUrl,
     siteName: portfolioData.personal.name,
-    images: [{ url: "/photo.jpg", width: 120, height: 120, alt: portfolioData.personal.name }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: portfolioData.personal.name }],
     type: "profile",
     locale: "es_ES",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: `${portfolioData.personal.name} — ${portfolioData.personal.title}`,
     description: portfolioData.i18n.es.personal.about,
-    images: ["/photo.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
