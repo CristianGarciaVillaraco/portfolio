@@ -1,0 +1,36 @@
+const TECH_LINKS: Record<string, string> = {
+  Angular: "https://angular.dev",
+  "Angular 18/19": "https://angular.dev",
+  "Angular 20": "https://angular.dev",
+  "Angular Material": "https://material.angular.io",
+  TypeScript: "https://www.typescriptlang.org",
+  JavaScript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  "Node.js": "https://nodejs.org",
+  MongoDB: "https://www.mongodb.com",
+  PrimeNG: "https://primeng.org",
+  "GitLab CI/CD": "https://docs.gitlab.com/ee/ci/",
+  Git: "https://git-scm.com",
+  Bootstrap: "https://getbootstrap.com",
+  ExpressJS: "https://expressjs.com",
+  "Express.js": "https://expressjs.com",
+  "Paper.js": "https://paperjs.org",
+  SonarQube: "https://www.sonarsource.com/products/sonarqube/",
+  Mocha: "https://mochajs.org",
+  Chai: "https://www.chaijs.com",
+  Ramda: "https://ramdajs.com",
+  Dexie: "https://dexie.org",
+  Playwright: "https://playwright.dev",
+  "Next.js": "https://nextjs.org",
+  "Tailwind CSS": "https://tailwindcss.com",
+  Prisma: "https://www.prisma.io",
+  SQLite: "https://www.sqlite.org",
+  "Auth.js": "https://authjs.dev",
+  HTML5: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  CSS3: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  Jest: "https://jestjs.io",
+  npm: "https://www.npmjs.com",
+};
+
+export function getTechUrl(tech: string): string | null {
+  return TECH_LINKS[tech] ?? null;
+}
