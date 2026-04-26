@@ -31,7 +31,7 @@ export default function Education() {
   const { tr } = useTranslation();
 
   return (
-    <section id="education" className="py-20 px-6 bg-slate-900 dot-bg">
+    <section id="education" className="py-20 px-6 bg-slate-800 dot-bg">
       <div className="max-w-4xl mx-auto" ref={ref}>
         <motion.h2
           className="text-4xl font-bold text-white mb-12 text-center"
@@ -53,7 +53,7 @@ export default function Education() {
               <motion.div
                 key={i}
                 variants={rowVariant}
-                className="bg-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-4 border border-slate-700"
+                className="bg-slate-900/60 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-4 border border-slate-700"
               >
                 <span className="flex-shrink-0 px-3 py-1 bg-sky-500/10 text-sky-400 text-sm font-medium rounded-lg border border-sky-500/20 self-start sm:self-auto">
                   {item.year}
@@ -71,7 +71,7 @@ export default function Education() {
           </motion.div>
 
           <motion.div
-            className="bg-slate-800 rounded-xl p-6 border border-slate-700 h-fit"
+            className="bg-slate-900/60 rounded-xl p-6 border border-slate-700 h-fit"
             initial={{ opacity: 0, x: 16 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}

@@ -4,6 +4,7 @@ import { motion, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { Project } from "@/types/portfolio";
 import { useTranslation } from "@/hooks/useTranslation";
+import { getTechUrl } from "@/lib/techLinks";
 
 interface ProjectsProps {
   data: Project[];
@@ -92,14 +93,27 @@ export default function Projects({ data }: ProjectsProps) {
                 )}
 
                 <div className="flex flex-wrap gap-2 mb-4 mt-auto">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-1 bg-slate-700 text-sky-300 rounded text-xs"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                  {project.tech.map((t) => {
+                    const url = getTechUrl(t);
+                    return url ? (
+                      <a
+                        key={t}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-2 py-1 bg-slate-700 hover:bg-slate-600 text-sky-300 rounded text-xs transition-colors"
+                      >
+                        {t}
+                      </a>
+                    ) : (
+                      <span
+                        key={t}
+                        className="px-2 py-1 bg-slate-700 text-sky-300 rounded text-xs"
+                      >
+                        {t}
+                      </span>
+                    );
+                  })}
                 </div>
 
                 <div className="flex gap-3">

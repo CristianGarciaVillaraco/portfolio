@@ -4,6 +4,7 @@ import { motion, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { Experience as ExperienceType } from "@/types/portfolio";
 import { useTranslation } from "@/hooks/useTranslation";
+import { getTechUrl } from "@/lib/techLinks";
 
 interface ExperienceProps {
   data: ExperienceType[];
@@ -33,7 +34,7 @@ export default function Experience({ data }: ExperienceProps) {
   const locale = lang === "en" ? "en-US" : "es-ES";
 
   return (
-    <section id="experience" className="py-20 px-6 bg-slate-800 dot-bg">
+    <section id="experience" className="py-20 px-6 bg-slate-900 dot-bg">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-white mb-12 text-center"
@@ -65,7 +66,7 @@ export default function Experience({ data }: ExperienceProps) {
                 className="pl-6 relative"
               >
                 <motion.div
-                  className="absolute -left-[9px] top-1 w-4 h-4 bg-sky-500 rounded-full ring-2 ring-slate-800"
+                  className="absolute -left-[9px] top-1 w-4 h-4 bg-sky-500 rounded-full ring-2 ring-slate-900"
                   initial={{ scale: 0 }}
                   animate={inView ? { scale: 1 } : {}}
                   transition={{
@@ -112,14 +113,27 @@ export default function Experience({ data }: ExperienceProps) {
                 </p>
                 {job.tech && job.tech.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-3">
-                    {job.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2 py-1 bg-slate-700 text-sky-300 rounded text-xs"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    {job.tech.map((t) => {
+                      const url = getTechUrl(t);
+                      return url ? (
+                        <a
+                          key={t}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-2 py-1 bg-slate-700 hover:bg-slate-600 text-sky-300 rounded text-xs transition-colors"
+                        >
+                          {t}
+                        </a>
+                      ) : (
+                        <span
+                          key={t}
+                          className="px-2 py-1 bg-slate-700 text-sky-300 rounded text-xs"
+                        >
+                          {t}
+                        </span>
+                      );
+                    })}
                   </div>
                 )}
               </motion.div>
