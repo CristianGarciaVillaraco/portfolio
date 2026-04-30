@@ -6,7 +6,7 @@ import Providers from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const baseUrl = "https://cristiangarciavillaraco.github.io/portfolio";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cristiangarciavillaraco.github.io/portfolio";
 
 export const metadata: Metadata = {
   title: `${portfolioData.personal.name} — ${portfolioData.personal.title}`,
