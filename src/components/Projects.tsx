@@ -64,9 +64,16 @@ export default function Projects({ data }: ProjectsProps) {
                 className="bg-slate-800 rounded-xl p-6 flex flex-col border border-slate-700 hover:border-sky-500/30 transition-colors"
               >
                 <div className="mb-3">
-                  <h3 className="text-white font-semibold text-lg leading-tight">
-                    {project.name}
-                  </h3>
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="text-white font-semibold text-lg leading-tight">
+                      {project.name}
+                    </h3>
+                    {project.status === "in-development" && (
+                      <span className="shrink-0 text-xs px-2 py-0.5 rounded-full border border-amber-500/40 text-amber-400 bg-amber-500/10">
+                        {tr.ui.inDevelopment}
+                      </span>
+                    )}
+                  </div>
                   {proj?.tagline && (
                     <p className="text-sky-400 text-sm mt-0.5">{proj.tagline}</p>
                   )}
