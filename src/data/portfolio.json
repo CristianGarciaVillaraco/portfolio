@@ -3,7 +3,6 @@
     "name": "Cristian Garcia Villaraco Aguilar",
     "title": "Fullstack Developer",
     "email": "cristiangarciavillaraco@gmail.com",
-    "phone": "+34 676 336 823",
     "github": "https://github.com/CristianGarciaVillaraco",
     "linkedin": "https://www.linkedin.com/in/cristian-garcia-villaraco-aguilar/",
     "location": "Zaragoza, España",
@@ -69,7 +68,8 @@
       "name": "OPCG Vault",
       "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "SQLite", "Auth.js"],
       "url": null,
-      "repo": "https://github.com/CristianGarciaVillaraco/opcg-vault"
+      "repo": "https://github.com/CristianGarciaVillaraco/opcg-vault",
+      "status": "in-development"
     }
   ],
   "education": [
@@ -167,7 +167,8 @@
         "available": "Disponible para nuevas oportunidades",
         "yearsExp": "años de experiencia",
         "contactBtn": "Contactar",
-        "comingSoon": "Próximamente"
+        "comingSoon": "Próximamente",
+        "inDevelopment": "En desarrollo"
       },
       "stats": {
         "years": "años de experiencia",
@@ -291,7 +292,8 @@
         "available": "Open to new opportunities",
         "yearsExp": "years of experience",
         "contactBtn": "Contact me",
-        "comingSoon": "Coming soon"
+        "comingSoon": "Coming soon",
+        "inDevelopment": "In development"
       },
       "stats": {
         "years": "years of experience",
