@@ -31,6 +31,7 @@ export interface Project {
   tech: string[];
   url: string | null;
   repo: string | null;
+  status?: "in-development" | "completed";
 }
 
 export interface Education {
@@ -91,6 +92,7 @@ export interface Translations {
     yearsExp: string;
     contactBtn: string;
     comingSoon: string;
+    inDevelopment: string;
   };
   stats: {
     years: string;
