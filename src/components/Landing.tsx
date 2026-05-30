@@ -32,6 +32,7 @@ export default function Landing({ data }: LandingProps) {
     offset: ["start start", "end start"],
   });
   const dotsY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
   return (
     <section
@@ -63,6 +64,7 @@ export default function Landing({ data }: LandingProps) {
               width={120}
               height={120}
               className="rounded-full object-cover ring-4 ring-slate-700"
+              style={{ width: 120, height: 120 }}
               priority
             />
           </motion.div>
@@ -192,6 +194,18 @@ export default function Landing({ data }: LandingProps) {
         </motion.p>
       </motion.div>
 
+      <motion.a
+        href="#about"
+        aria-label="Scroll down"
+        style={{ opacity: scrollIndicatorOpacity }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 text-slate-500 hover:text-sky-400 transition-colors"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </motion.a>
     </section>
   );
 }

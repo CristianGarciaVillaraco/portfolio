@@ -41,6 +41,7 @@ export default function Skills({ data }: SkillsProps) {
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
+          className="relative"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
