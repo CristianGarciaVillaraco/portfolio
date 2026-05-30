@@ -102,7 +102,7 @@ export default function Experience({ data }: ExperienceProps) {
                       <a href={job.companyUrl} target="_blank" rel="noopener noreferrer"
                         className="group inline-flex items-center gap-1 text-sky-400 font-medium hover:text-sky-300 transition-colors">
                         {job.company}
-                        <svg className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <svg className="hidden sm:block w-3.5 h-3.5 opacity-40 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </a>
