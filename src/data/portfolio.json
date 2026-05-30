@@ -3,7 +3,6 @@
     "name": "Cristian Garcia Villaraco Aguilar",
     "title": "Fullstack Developer",
     "email": "cristiangarciavillaraco@gmail.com",
-    "phone": "+34 676 336 823",
     "github": "https://github.com/CristianGarciaVillaraco",
     "linkedin": "https://www.linkedin.com/in/cristian-garcia-villaraco-aguilar/",
     "location": "Zaragoza, España",
@@ -25,7 +24,7 @@
       "endDate": null,
       "companyUrl": "https://moontech-industrial.com/",
       "description": "Desarrollo de interfaces web con Angular 18/19 en arquitectura de microfrontends (shell + librería de componentes compartidos) para el sistema ERIMS de gestión de flotas robóticas (AGVs/AMRs). Implementación de aplicaciones internas en Node.js para configuración de lógica de control robótico con MongoDB. Creación de funciones JavaScript para orquestación intralogística y automatización de procesos industriales.",
-      "tech": ["Angular 18/19", "TypeScript", "Node.js", "MongoDB", "PrimeNG", "GitLab CI/CD"]
+      "tech": ["Angular 18/19", "TypeScript", "Node.js", "MongoDB", "Vue", "Konva.js", "Jest", "Docker", "SSH", "PrimeNG", "GitLab CI/CD"]
     },
     {
       "company": "Ibertech IT — Indra",
@@ -35,7 +34,7 @@
       "endDate": "2025-08",
       "companyUrl": "https://www.indracompany.com",
       "description": "Desarrollo de módulos en Angular dentro de una arquitectura de microservicios: listados, creación, edición y detalle de registros. Implementación de generación de PDFs con plantillas para reportes. Participación en un módulo avanzado con Paper.js para visualización gráfica de infraestructuras ferroviarias. Refactorizaciones, cobertura de tests unitarios y métricas con SonarQube.",
-      "tech": ["Angular", "TypeScript", "JavaScript", "Paper.js", "SonarQube", "Git"]
+      "tech": ["Angular", "TypeScript", "JavaScript", "Paper.js", "Lodash", "SonarQube", "Git"]
     },
     {
       "company": "Ibertech IT — Inetum",
@@ -55,21 +54,37 @@
       "endDate": "2021-12",
       "companyUrl": "https://www.nttdata.com",
       "description": "Desarrollo de un generador automático de módulos y componentes Angular en ExpressJS + TypeScript a partir de plantillas. Tests unitarios, editor gráfico drag & drop para diseño de modelos, y refactorizaciones con patrones funcionales usando Ramda. Soporte en aplicación ExpressJS de validación de modelos JSON.",
-      "tech": ["Node.js", "ExpressJS", "Angular", "TypeScript", "Mocha", "Chai", "Ramda"]
+      "tech": ["Node.js", "ExpressJS", "Angular", "TypeScript", "Mocha", "Chai", "Ramda", "Lodash"]
     }
   ],
   "projects": [
     {
       "name": "Ibertech Heroes App",
       "tech": ["Angular 20", "TypeScript", "Angular Material", "Dexie", "Playwright"],
+      "tags": ["Angular", "Frontend"],
       "url": null,
       "repo": "https://github.com/CristianGarciaVillaraco/ibertech-heroes-test"
     },
     {
       "name": "OPCG Vault",
       "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "SQLite", "Auth.js"],
+      "tags": ["Next.js", "Full-Stack"],
       "url": null,
-      "repo": "https://github.com/CristianGarciaVillaraco/opcg-vault"
+      "repo": "https://github.com/CristianGarciaVillaraco/opcg-vault",
+      "status": "in-development"
+    },
+    {
+      "name": "Invoice Generator",
+      "tech": ["HTML5", "CSS3", "Vanilla JS", "Dexie", "pdfmake", "PWA", "Cloudflare Workers"],
+      "tags": ["PWA", "Vanilla JS"],
+      "url": "https://cristiangarciavillaraco.github.io/plrc-demo/",
+      "repo": "https://github.com/CristianGarciaVillaraco/plrc-demo",
+      "screenshots": [
+        "/screenshots/invoice-generator/04-list-with-docs.png",
+        "/screenshots/invoice-generator/02-new-invoice.png",
+        "/screenshots/invoice-generator/03-preview.png",
+        "/screenshots/invoice-generator/05-mobile-list.png"
+      ]
     }
   ],
   "education": [
@@ -160,14 +175,26 @@
         ]
       },
       "ui": {
-        "demo": "Ver demo",
+        "demo": "Demo",
         "code": "Código",
         "current": "Actualidad",
         "downloadCV": "Descargar CV",
         "available": "Disponible para nuevas oportunidades",
         "yearsExp": "años de experiencia",
         "contactBtn": "Contactar",
-        "comingSoon": "Próximamente"
+        "comingSoon": "Próximamente",
+        "inDevelopment": "En desarrollo",
+        "seeMore": "Ver capturas",
+        "close": "Cerrar",
+        "allProjects": "Todos",
+        "showMore": "Ver más",
+        "showLess": "Ver menos",
+        "logbook": "Bitácora",
+        "general": "General",
+        "technical": "Técnico",
+        "sendEmail": "Enviar email",
+        "contactVia": "O contáctame por",
+        "remote": "Remoto"
       },
       "stats": {
         "years": "años de experiencia",
@@ -214,6 +241,102 @@
             "Autenticación con Auth.js v5",
             "Base de datos con SQLite + Prisma ORM",
             "Gestión de colección personal y de otros usuarios"
+          ]
+        },
+        "Invoice Generator": {
+          "tagline": "PWA offline-first para generar facturas y presupuestos PDF",
+          "description": "Herramienta real desplegada en producción para un autónomo. Genera facturas y presupuestos en PDF directamente en el navegador, sin servidor ni cuenta requerida. Esta demo usa datos ficticios.",
+          "highlights": [
+            "100% offline gracias a Service Worker e IndexedDB",
+            "Dos plantillas PDF: moderna y clásica (pdfmake)",
+            "PWA instalable en móvil y escritorio",
+            "Sync opcional entre dispositivos con Cloudflare Workers D1"
+          ]
+        }
+      },
+      "experience": {
+        "Moontech Industrial Solutions": {
+          "entries": [
+            {
+              "title": "Módulo de impresoras industriales",
+              "general": "Herramienta para conectar e imprimir desde cualquier tipo de impresora industrial sin cambiar código — configuración completa desde base de datos.\n- Soporta conexión TCP/IP y USB\n- Para USB: selector y nombre del dispositivo configurados en BD, sin tocar código\n- Arquitectura genérica: añadir una impresora nueva no requiere modificaciones",
+              "technical": "Conexión TCP/IP nativa y USB con detección por selector + nombre de dispositivo.\n- Toda la configuración de conexión y parámetros almacenada en BD\n- Instalación manual de drivers para pruebas por cable al no tener IP disponible\n- Diseño genérico: cualquier impresora nueva es configurable sin tocar el módulo"
+            },
+            {
+              "title": "Diseñador de etiquetas",
+              "general": "Editor visual completo para diseñar etiquetas industriales personalizadas, genérico para cualquier entidad gracias al mapeo de variables desde base de datos.\n- Soporta texto, imágenes, QR, códigos de barras y líneas\n- Preview fiel al resultado de impresión antes de imprimir\n- Exportación ZPL para impresoras Zebra",
+              "technical": "Vue + Konva.js sobre canvas. Configuración previa desde BD: título, tamaño, entidad y campos a mapear.\n- Editor con zoom, encuadre, Ctrl+Z, guías de alineación y snap magnético desactivable\n- Panel lateral con árbol de elementos y datos de ejemplo dinámicos\n- Elementos: texto (fuente, color, multilinea, variable o plano), QR, imagen (fija o dinámica), barcode, línea, grupos\n- Preview de impresión con selector de configuración desde BD"
+            },
+            {
+              "title": "Device detector",
+              "general": "Sistema que detecta automáticamente el dispositivo del usuario y adapta la interfaz a su puesto de trabajo — todo configurable desde base de datos sin cambiar código.\n- Cada tipo de dispositivo puede tener una experiencia de UI distinta\n- Preparado para escalar a nuevos tipos sin modificar el código",
+              "technical": "Módulo de backend. Configuración en BD por dispositivo con combinación de criterios.\n- Criterios soportados: user-agent, MDM, IP — combinables entre sí\n- Cada dispositivo se asocia a un puesto, que determina el renderizado del header\n- MAC address en evaluación\n- Distintos desktops son técnicamente posibles pero lo gestiona el sistema de permisos"
+            },
+            {
+              "title": "Filtros configurables de tabla",
+              "general": "Sistema de filtros avanzados integrado en la tabla genérica de la librería interna, activable y configurable por cualquier módulo sin construirlo desde cero.\n- Filtros de texto, número, fecha, hora, checkbox y selectores\n- Todos configurables mediante JSON con valores por defecto y estado disabled\n- Conexión al backend con mapeo propio por tipo de filtro, previniendo inyecciones",
+              "technical": "Configuración declarativa mediante JSON. Integrado en la tabla genérica respetando su estilo.\n- Texto: simple o complejo (contains / equal / init / end)\n- Número: botones +/−, mín/máx configurables y rango\n- Selector: simple o múltiple con buscador y opciones disabled configurables\n- Fecha y hora: rangos, navegación dinámica por mes/año, días y meses desactivables\n- Todos los filtros: label opcional, valores por defecto, estilos y botones personalizables\n- También añadí un selector genérico y un header genérico a la librería"
+            },
+            {
+              "title": "Tests unitarios en el core",
+              "general": "Reorganicé la estructura de tests del core: separé unitarios de integración, corregí lo que no estaba bien y dejé todo preparado para crecer.\n- Tests unitarios operativos desde el primer momento\n- Tests de integración pendientes, pero la estructura ya está definida y lista",
+              "technical": "Jest con data-driven testing (test.each).\n- Separación clara entre tests unitarios y de integración desde la configuración\n- Múltiples conjuntos de datos por test sin duplicar código"
+            },
+            {
+              "title": "Calidad y tests en módulo de microfrontend",
+              "general": "Configuré la calidad de código y añadí tests en un módulo específico de la arquitectura de microfrontends — cada módulo tiene su propia configuración, así que estos cambios aplican solo a ese microfrontend.\n- Prettier + ESLint añadidos a la configuración de este módulo\n- Suite de tests con Jest integrada en el pipeline de CI/CD\n- Normalización de line endings y revisión de MRs a nivel de proyecto",
+              "technical": "Módulo Angular 18 dentro de arquitectura de microfrontends.\n- Prettier + ESLint: configuración añadida solo a este módulo, no a nivel de proyecto\n- Jest sobre Vitest: Angular 18 sin integración estable con Vitest en ese momento\n- Jest sobre Karma: este módulo tiene pendiente una migración y Karma está en proceso de deprecación\n- Pipeline GitLab con etapas de lint y format check en cada merge request\n- .gitattributes para normalizar line endings en equipo mixto Linux/Windows\n- Revisión de MRs para prevenir leaks de ficheros sensibles como .npmrc"
+            },
+            {
+              "title": "Despliegue en situación de bloqueo",
+              "general": "La herramienta de despliegue falló y el responsable no estaba disponible — resolví la situación de forma autónoma.\n- Imagen Docker descargada en local\n- Transferida manualmente al servidor destino\n- Desplegada vía SSH sin herramientas adicionales",
+              "technical": "Docker pull en local → transferencia al servidor → docker load + run vía SSH.\n- Sin acceso al registry remoto ni herramientas de CD disponibles\n- Solución sin modificar la imagen ni la configuración de producción"
+            }
+          ]
+        },
+        "Ibertech IT — Indra": {
+          "note": "Visión general — han pasado varios años desde entonces.",
+          "entries": [
+            {
+              "title": "Módulos para clientes internacionales",
+              "general": "Desarrollo de módulos completos para distintos clientes internacionales dentro del sistema base del proyecto.\n- Módulo de dispositivos de red para cliente de Irlanda\n- Módulo de posiciones para cliente de Estonia\n- Misma arquitectura base adaptada a los requisitos de cada cliente",
+              "technical": "Angular con arquitectura de microservicios. Módulos aislados con sus propias rutas y servicios.\n- Tablas con listado, filtrado y paginación\n- Formularios de creación y edición con validaciones\n- Vistas de detalle con datos relacionados"
+            },
+            {
+              "title": "Visualización de infraestructuras ferroviarias",
+              "general": "Trabajé sobre el módulo gráfico existente para representar redes ferroviarias, adaptándolo a nuevos casos de uso — un dominio con requisitos visuales exigentes.\n- Vías, señales y elementos de red como objetos gráficos interactivos\n- Adaptaciones sobre el módulo original creado por otro miembro del equipo",
+              "technical": "Paper.js para manipulación directa de canvas vectorial.\n- Elementos ferroviarios modelados como objetos gráficos con propiedades editables\n- Adaptaciones de comportamiento y renderizado para nuevos tipos de elemento"
+            },
+            {
+              "title": "Generación de PDFs",
+              "general": "Creé las plantillas de informes PDF que los clientes finales usaban para sus reportes oficiales, sobre la herramienta ya disponible en el proyecto.\n- Plantillas con datos variables según el tipo de informe\n- Formato y estilos adaptados a los requisitos de cada cliente",
+              "technical": "Plantillas dinámicas sobre la librería de maquetación PDF del proyecto.\n- Binding de datos variables en tiempo de generación\n- Diseño de plantillas respetando el formato oficial requerido"
+            },
+            {
+              "title": "Calidad y refactorización",
+              "general": "Participé en mejorar la calidad del código existente y mantener las métricas del proyecto en buen estado.\n- Tests unitarios para cubrir lógica existente\n- Refactorizaciones para reducir deuda técnica",
+              "technical": "SonarQube para análisis estático y seguimiento de cobertura.\n- Lodash para acceso seguro a propiedades anidadas en objetos del dominio\n- Refactorizaciones orientadas a mejorar legibilidad y reducir complejidad"
+            }
+          ]
+        },
+        "NTT Data": {
+          "note": "Visión general — han pasado varios años desde entonces.",
+          "entries": [
+            {
+              "title": "Generador automático de módulos Angular",
+              "general": "Junto con otro compañero construimos una herramienta que generaba módulos Angular completos desde plantillas — lo que antes llevaba horas pasó a ser segundos.\n- Scaffolding completo: componentes, servicios, rutas y tests\n- Plantillas HBS configurables por tipo de módulo\n- Eliminó el trabajo repetitivo y los errores de estructura manual",
+              "technical": "Node.js + ExpressJS como motor de generación.\n- Plantillas Handlebars (HBS) con variables para nombre, rutas y estructura\n- Generación completa: componente, servicio, módulo, routing y spec\n- Configurable por tipo de módulo sin modificar el generador"
+            },
+            {
+              "title": "Editor drag & drop",
+              "general": "Participé en el mantenimiento de un editor visual para diseñar modelos de datos arrastrando y soltando elementos, dentro de un equipo grande.\n- Refactorizaciones para mejorar el código existente\n- Resolución de bugs en el editor gráfico",
+              "technical": "Trabajo sobre código existente en el editor drag & drop.\n- Corrección de bugs en comportamientos de arrastre y persistencia de modelos\n- Refactorizaciones puntuales sin rediseño de arquitectura"
+            },
+            {
+              "title": "Programación funcional",
+              "general": "Un nuevo compañero nos introdujo a un estilo de programación más predecible y fácil de razonar, especialmente para transformaciones de datos complejas.\n- Adoptamos Ramda y Lodash como herramientas principales\n- Cambio de enfoque hacia funciones puras en la lógica de negocio",
+              "technical": "Ramda para composición de funciones e inmutabilidad.\n- Lodash para utilidades de colecciones y acceso seguro a propiedades\n- Pipelines de transformación en lugar de mutación de estado\n- Patrones funcionales aplicados a la lógica de negocio"
+            }
           ]
         }
       }
@@ -291,7 +414,19 @@
         "available": "Open to new opportunities",
         "yearsExp": "years of experience",
         "contactBtn": "Contact me",
-        "comingSoon": "Coming soon"
+        "comingSoon": "Coming soon",
+        "inDevelopment": "In development",
+        "seeMore": "Screenshots",
+        "close": "Close",
+        "allProjects": "All",
+        "showMore": "Show more",
+        "showLess": "Show less",
+        "logbook": "Logbook",
+        "general": "General",
+        "technical": "Technical",
+        "sendEmail": "Send email",
+        "contactVia": "Or contact me on",
+        "remote": "Remote"
       },
       "stats": {
         "years": "years of experience",
@@ -338,6 +473,112 @@
             "Authentication with Auth.js v5",
             "Database with SQLite + Prisma ORM",
             "Personal and community collection management"
+          ]
+        },
+        "Invoice Generator": {
+          "tagline": "Offline-first PWA to generate invoices and quotes as PDF",
+          "description": "A real tool deployed in production for a freelance business. Generates invoices and quotes as PDF directly in the browser — no server, no account required. This demo uses fictional data.",
+          "highlights": [
+            "100% offline via Service Worker and IndexedDB",
+            "Two PDF templates: modern and classic (pdfmake)",
+            "Installable PWA on mobile and desktop",
+            "Optional multi-device sync with Cloudflare Workers D1"
+          ]
+        }
+      },
+      "experience": {
+        "Moontech Industrial Solutions": {
+          "role": "Fullstack Developer",
+          "description": "Building web interfaces with Angular 18/19 in a microfrontend architecture (shell + shared component library) for the ERIMS robotic fleet management system (AGVs/AMRs). Implementing internal Node.js applications for robotic control logic configuration with MongoDB. Creating JavaScript functions for intralogistics orchestration and industrial process automation.",
+          "entries": [
+            {
+              "title": "Industrial Printer Module",
+              "general": "Tool to connect and print from any type of industrial printer without changing code — fully configurable from the database.\n- Supports TCP/IP and USB connections\n- For USB: selector and device name configured in DB, no code changes needed\n- Generic architecture: adding a new printer requires no modifications",
+              "technical": "Native TCP/IP and USB connection with selector + device name detection.\n- All connection config and parameters stored in DB\n- Installed drivers manually to test via cable when no IP was available\n- Generic design: any new printer is configurable without touching the module"
+            },
+            {
+              "title": "Label Designer",
+              "general": "Full visual editor to design custom industrial labels, generic for any entity through variable mapping from the database.\n- Supports text, images, QR codes, barcodes and lines\n- Print-accurate preview before printing\n- ZPL export for Zebra printers",
+              "technical": "Vue + Konva.js on canvas. Pre-configured from DB: title, size, entity and fields to map.\n- Editor with zoom, framing, Ctrl+Z, alignment guide lines and toggleable magnetic snap\n- Side panel with element tree and dynamic sample data\n- Elements: text (font, color, multiline, variable or plain), QR, image (fixed or dynamic), barcode, line, groups\n- Print preview with configuration selector from DB"
+            },
+            {
+              "title": "Device Detector",
+              "general": "System that automatically detects the user's device and adapts the interface to their workstation — all configurable from the database without changing code.\n- Each device type can have a different UI experience\n- Built to scale to new device types without code modifications",
+              "technical": "Backend module. DB configuration per device with combinable criteria.\n- Supported criteria: user-agent, MDM, IP — combinable\n- Each device linked to a workstation, which determines header rendering\n- MAC address under evaluation\n- Different desktops technically possible but handled by the permissions system"
+            },
+            {
+              "title": "Configurable Table Filters",
+              "general": "Advanced filter system integrated into the generic table of the internal component library, activatable and configurable by any module without building from scratch.\n- Text, number, date, time, checkbox and selector filters\n- All configurable via JSON with default values and disabled state\n- Backend connection with custom mapping per filter type, preventing injections",
+              "technical": "Declarative JSON configuration. Integrated into the generic table respecting its style.\n- Text: simple or complex (contains / equal / init / end)\n- Number: +/− buttons, configurable min/max and range\n- Selector: single or multi with search and configurable disabled options\n- Date and time: ranges, dynamic month/year navigation, disableable days and months\n- All filters: optional label, default values, customizable styles and buttons\n- Also added a generic selector and generic header to the library"
+            },
+            {
+              "title": "Core Unit Tests",
+              "general": "I reorganised the core test structure: separated unit tests from integration tests, fixed what wasn't working and left everything ready to grow.\n- Unit tests operational from the start\n- Integration tests pending, but the structure is already defined and ready",
+              "technical": "Jest with data-driven testing (test.each).\n- Clear separation between unit and integration tests from the configuration\n- Multiple data sets per test without duplicating code"
+            },
+            {
+              "title": "Quality and Tests in a Microfrontend Module",
+              "general": "I set up code quality tooling and tests in a specific module within the microfrontend architecture — each module has its own config, so these changes apply only to that microfrontend.\n- Prettier + ESLint added to this module's configuration\n- Jest test suite integrated into the CI/CD pipeline\n- Line ending normalisation and MR reviews at project level",
+              "technical": "Angular 18 module within a microfrontend architecture.\n- Prettier + ESLint: configuration added only to this module, not project-wide\n- Jest over Vitest: Angular 18 had no stable Vitest integration at the time\n- Jest over Karma: this module has a pending migration and Karma is being deprecated\n- GitLab pipeline with lint and format check stages on each merge request\n- .gitattributes to normalise line endings for mixed Linux/Windows teams\n- MR reviews to prevent leaks of sensitive files such as .npmrc"
+            },
+            {
+              "title": "Deployment Under Pressure",
+              "general": "The deployment tool failed and the person responsible was unavailable — I resolved the situation autonomously.\n- Docker image downloaded locally\n- Transferred manually to the destination server\n- Deployed via SSH without additional tools",
+              "technical": "Docker pull locally → transfer to server → docker load + run via SSH.\n- No access to remote registry or CD tooling available\n- Solution without modifying the image or production configuration"
+            }
+          ]
+        },
+        "Ibertech IT — Inetum": {
+          "role": "Senior Web Developer",
+          "description": "Implementing interactive listings and forms in Angular, including navigation menu integration. Contributing to the development of the first functional version for the client."
+        },
+        "Ibertech IT — Indra": {
+          "note": "High-level overview — several years have passed since then.",
+          "role": "Senior Web Developer",
+          "description": "Developing Angular modules within a microservices architecture: listings, create, edit and detail views. Implementing PDF generation with templates for client reports. Participating in an advanced module using Paper.js for graphical visualisation of railway infrastructure. Refactoring, unit test coverage and quality metrics with SonarQube.",
+          "entries": [
+            {
+              "title": "Modules for International Clients",
+              "general": "Development of complete modules for different international clients within the project's base system.\n- Network device module for the Irish client\n- Positions module for the Estonian client\n- Same base architecture adapted to each client's requirements",
+              "technical": "Angular with microservices architecture. Isolated modules with their own routes and services.\n- Tables with listing, filtering and pagination\n- Create and edit forms with validations\n- Detail views with related data"
+            },
+            {
+              "title": "Railway Infrastructure Visualisation",
+              "general": "I worked on the existing graphical module for representing railway networks, adapting it to new use cases — a domain with demanding visual requirements.\n- Tracks, signals and network elements as interactive graphical objects\n- Adaptations on top of the original module built by another team member",
+              "technical": "Paper.js for direct vector canvas manipulation.\n- Railway elements modelled as graphical objects with editable properties\n- Behaviour and rendering adaptations for new element types"
+            },
+            {
+              "title": "PDF Generation",
+              "general": "I created PDF report templates used by end clients for their official reports, using the tool already in place in the project.\n- Templates with variable data per report type\n- Format and styles adapted to each client's requirements",
+              "technical": "Dynamic templates on top of the project's PDF layout library.\n- Variable data binding at generation time\n- Template design respecting the required official format"
+            },
+            {
+              "title": "Quality and Refactoring",
+              "general": "I participated in improving the quality of existing code and keeping the project's metrics in good shape.\n- Unit tests to cover existing logic\n- Refactoring to reduce technical debt",
+              "technical": "SonarQube for static analysis and coverage tracking.\n- Lodash for safe access to nested properties in domain objects\n- Refactoring focused on improving readability and reducing complexity"
+            }
+          ]
+        },
+        "NTT Data": {
+          "note": "High-level overview — several years have passed since then.",
+          "role": "Junior Fullstack Developer",
+          "description": "Developing an automatic Angular module and component generator in ExpressJS + TypeScript from templates. Unit tests, drag & drop graphical editor for data model design, and refactoring with functional patterns using Ramda. Support on an ExpressJS application for JSON model validation.",
+          "entries": [
+            {
+              "title": "Angular Module Auto-Generator",
+              "general": "Together with a colleague, we built a tool that generated complete Angular modules from templates — what used to take hours was done in seconds.\n- Full scaffolding: components, services, routes and tests\n- Configurable HBS templates per module type\n- Eliminated repetitive work and structural errors",
+              "technical": "Node.js + ExpressJS as generation engine.\n- Handlebars (HBS) templates with variables for name, routes and structure\n- Full generation: component, service, module, routing and spec\n- Configurable per module type without modifying the generator"
+            },
+            {
+              "title": "Drag & Drop Editor",
+              "general": "I contributed to maintaining a visual editor for designing data models by dragging and dropping elements, within a large team.\n- Refactoring to improve existing code\n- Bug fixing in the graphical editor",
+              "technical": "Work on existing code in the drag & drop editor.\n- Bug fixes in drag behaviour and model persistence\n- Targeted refactoring without architectural redesign"
+            },
+            {
+              "title": "Functional Programming",
+              "general": "A new team member introduced us to a more predictable programming style, especially for complex data transformations.\n- Adopted Ramda and Lodash as main tools\n- Shifted towards pure functions in business logic",
+              "technical": "Ramda for function composition and immutability.\n- Lodash for collection utilities and safe property access\n- Transformation pipelines instead of state mutation\n- Functional patterns applied to business logic"
+            }
           ]
         }
       }
