@@ -54,7 +54,7 @@ export default function Landing({ data }: LandingProps) {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex flex-col items-center relative z-10"
+        className="flex flex-col items-center relative z-10 pt-14 sm:pt-0"
       >
         {data.photo && (
           <motion.div variants={item} className="mb-6">
@@ -100,13 +100,13 @@ export default function Landing({ data }: LandingProps) {
 
         <motion.div
           variants={item}
-          className="flex gap-4 flex-wrap justify-center items-center"
+          className="flex gap-3 justify-center items-center"
         >
           <motion.a
             href={`mailto:${data.email}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-400 text-white rounded-lg font-medium transition-colors"
+            className="flex items-center gap-2 px-3 sm:px-6 py-3 bg-sky-500 hover:bg-sky-400 text-white rounded-lg font-medium transition-colors"
           >
             <svg
               className="w-4 h-4 shrink-0"
@@ -122,14 +122,14 @@ export default function Landing({ data }: LandingProps) {
                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
-            {tr.ui.contactBtn}
+            <span className="hidden sm:inline">{tr.ui.contactBtn}</span>
           </motion.a>
           <motion.a
             href="/cv.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors"
+            className="flex items-center gap-2 px-3 sm:px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors"
           >
             <svg
               className="w-4 h-4 shrink-0"
@@ -145,10 +145,10 @@ export default function Landing({ data }: LandingProps) {
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
               />
             </svg>
-            {tr.ui.downloadCV}
+            <span className="hidden sm:inline">{tr.ui.downloadCV}</span>
           </motion.a>
 
-          <div className="flex items-center gap-3 ml-1">
+          <div className="flex items-center gap-3">
             <motion.a
               href={data.github}
               target="_blank"

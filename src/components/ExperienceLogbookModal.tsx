@@ -112,31 +112,49 @@ export default function ExperienceLogbookModal({ company, logbook, onClose }: Pr
         transition={{ duration: 0.2 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700 shrink-0">
-          <div>
-            <p className="text-xs text-slate-400 uppercase tracking-widest mb-0.5">{tr.ui.logbook}</p>
-            <h3 className="text-white font-semibold">{company}</h3>
-            {logbook.note && <p className="text-xs text-slate-500 italic mt-0.5">{logbook.note}</p>}
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex rounded-lg overflow-hidden border border-slate-600 text-xs">
-              <button
-                onClick={() => setMode("general")}
-                className={`px-3 py-1.5 transition-colors ${mode === "general" ? "bg-sky-500/20 text-sky-300" : "text-slate-400 hover:text-slate-300"}`}
-              >
-                {tr.ui.general}
-              </button>
-              <button
-                onClick={() => setMode("technical")}
-                className={`px-3 py-1.5 transition-colors border-l border-slate-600 ${mode === "technical" ? "bg-sky-500/20 text-sky-300" : "text-slate-400 hover:text-slate-300"}`}
-              >
-                {tr.ui.technical}
+        <div className="border-b border-slate-700 shrink-0">
+          <div className="flex items-start justify-between px-6 pt-4 pb-3">
+            <div>
+              <p className="text-xs text-slate-400 uppercase tracking-widest mb-0.5">{tr.ui.logbook}</p>
+              <h3 className="text-white font-semibold">{company}</h3>
+              {logbook.note && <p className="text-xs text-slate-500 italic mt-0.5">{logbook.note}</p>}
+            </div>
+            <div className="flex items-center gap-3">
+              {/* Desktop pill toggle */}
+              <div className="hidden sm:flex rounded-lg overflow-hidden border border-slate-600 text-xs">
+                <button
+                  onClick={() => setMode("general")}
+                  className={`px-3 py-1.5 transition-colors ${mode === "general" ? "bg-sky-500/20 text-sky-300" : "text-slate-400 hover:text-slate-300"}`}
+                >
+                  {tr.ui.general}
+                </button>
+                <button
+                  onClick={() => setMode("technical")}
+                  className={`px-3 py-1.5 transition-colors border-l border-slate-600 ${mode === "technical" ? "bg-sky-500/20 text-sky-300" : "text-slate-400 hover:text-slate-300"}`}
+                >
+                  {tr.ui.technical}
+                </button>
+              </div>
+              <button onClick={onClose} aria-label={tr.ui.close} className="text-slate-400 hover:text-white transition-colors p-1">
+                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </button>
             </div>
-            <button onClick={onClose} aria-label={tr.ui.close} className="text-slate-400 hover:text-white transition-colors p-1">
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+          </div>
+          {/* Mobile full-width tabs */}
+          <div className="sm:hidden flex border-t border-slate-700/60">
+            <button
+              onClick={() => setMode("general")}
+              className={`flex-1 py-2.5 text-sm font-medium border-b-2 transition-colors ${mode === "general" ? "border-sky-500 text-sky-300" : "border-transparent text-slate-400"}`}
+            >
+              {tr.ui.general}
+            </button>
+            <button
+              onClick={() => setMode("technical")}
+              className={`flex-1 py-2.5 text-sm font-medium border-b-2 transition-colors ${mode === "technical" ? "border-sky-500 text-sky-300" : "border-transparent text-slate-400"}`}
+            >
+              {tr.ui.technical}
             </button>
           </div>
         </div>

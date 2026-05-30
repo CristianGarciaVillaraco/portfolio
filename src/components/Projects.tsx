@@ -14,32 +14,178 @@ interface ProjectsProps {
   data: Project[];
 }
 
+function MobileTagFilter({
+  tags,
+  selected,
+  onChange,
+  allLabel,
+  searchPlaceholder,
+  clearLabel,
+}: {
+  tags: string[];
+  selected: string[];
+  onChange: (tags: string[]) => void;
+  allLabel: string;
+  searchPlaceholder: string;
+  clearLabel: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onDown = (e: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, []);
+
+  const visible = tags.filter((t) =>
+    t.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const toggle = (tag: string) => {
+    onChange(
+      selected.includes(tag)
+        ? selected.filter((t) => t !== tag)
+        : [...selected, tag]
+    );
+  };
+
+  const triggerLabel =
+    selected.length === 0
+      ? allLabel
+      : selected.length === 1
+      ? selected[0]
+      : `${selected[0]} +${selected.length - 1}`;
+
+  return (
+    <div ref={wrapperRef} className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className={`w-full flex items-center justify-between px-4 py-2.5 bg-slate-800 border rounded-lg text-sm transition-colors ${
+          open ? "border-sky-500/50" : "border-slate-700"
+        }`}
+      >
+        <span className={selected.length > 0 ? "text-sky-300 font-medium" : "text-slate-400"}>
+          {triggerLabel}
+        </span>
+        <svg
+          className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          fill="none" stroke="currentColor" strokeWidth="2"
+          strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute top-full left-0 right-0 mt-1.5 bg-slate-800 border border-slate-700 rounded-lg shadow-2xl z-20 overflow-hidden">
+          <div className="p-2 border-b border-slate-700">
+            <div className="relative">
+              <svg
+                className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500"
+                fill="none" stroke="currentColor" strokeWidth="2"
+                strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input
+                type="text"
+                placeholder={searchPlaceholder}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-8 pr-3 py-1.5 bg-slate-700 rounded text-slate-300 text-sm placeholder-slate-500 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="max-h-52 overflow-y-auto">
+            {visible.length === 0 ? (
+              <p className="text-slate-500 text-sm text-center py-4">—</p>
+            ) : (
+              visible.map((tag) => {
+                const isSelected = selected.includes(tag);
+                return (
+                  <button
+                    key={tag}
+                    onClick={() => toggle(tag)}
+                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm text-left transition-colors ${
+                      isSelected ? "bg-sky-500/10" : "hover:bg-slate-700/60"
+                    }`}
+                  >
+                    <span
+                      className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center transition-colors ${
+                        isSelected ? "bg-sky-500 border-sky-500" : "border-slate-500"
+                      }`}
+                    >
+                      {isSelected && (
+                        <svg
+                          className="w-2.5 h-2.5 text-white"
+                          fill="none" stroke="currentColor" strokeWidth="3"
+                          strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      )}
+                    </span>
+                    <span className={isSelected ? "text-sky-300" : "text-slate-300"}>{tag}</span>
+                  </button>
+                );
+              })
+            )}
+          </div>
+
+          {selected.length > 0 && (
+            <div className="p-2 border-t border-slate-700">
+              <button
+                onClick={() => { onChange([]); setOpen(false); }}
+                className="w-full text-center text-xs text-slate-400 hover:text-sky-400 transition-colors py-1"
+              >
+                {clearLabel}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Projects({ data }: ProjectsProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const { tr } = useTranslation();
+  const { tr, lang } = useTranslation();
 
-  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [activeTags, setActiveTags] = useState<string[]>([]);
   const [tagsExpanded, setTagsExpanded] = useState(false);
   const [projectsExpanded, setProjectsExpanded] = useState(false);
   const [lightbox, setLightbox] = useState<{ project: Project; idx: number } | null>(null);
 
   const allTags = Array.from(new Set(data.flatMap((p) => p.tags ?? [])));
   const hiddenTags = allTags.slice(TAGS_VISIBLE);
-  const activeTagIsHidden = !!activeTag && hiddenTags.includes(activeTag);
+  const activeTagIsHidden = activeTags.some((t) => hiddenTags.includes(t));
   const showAllTags = tagsExpanded || activeTagIsHidden;
   const visibleTags = showAllTags ? allTags : allTags.slice(0, TAGS_VISIBLE);
   const hiddenCount = allTags.length - TAGS_VISIBLE;
 
-  const filtered = activeTag ? data.filter((p) => p.tags?.includes(activeTag)) : data;
+  const filtered =
+    activeTags.length === 0
+      ? data
+      : data.filter((p) => p.tags?.some((t) => activeTags.includes(t)));
   const visibleProjects = projectsExpanded ? filtered : filtered.slice(0, PROJECTS_LIMIT);
   const hasMore = filtered.length > PROJECTS_LIMIT;
 
-  // Reset project expansion when filter changes
-  useEffect(() => { setProjectsExpanded(false); }, [activeTag]);
+  useEffect(() => { setProjectsExpanded(false); }, [activeTags]);
 
-
+  const searchPlaceholder = lang === "en" ? "Search…" : "Buscar…";
+  const clearLabel = lang === "en" ? "Clear filters" : "Limpiar filtros";
 
   return (
     <>
@@ -54,7 +200,7 @@ export default function Projects({ data }: ProjectsProps) {
             {tr.sections.projects}
           </motion.h2>
 
-          {/* Filter pills */}
+          {/* Filter */}
           {allTags.length > 0 && (
             <motion.div
               ref={ref}
@@ -63,11 +209,24 @@ export default function Projects({ data }: ProjectsProps) {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 }}
             >
-              <div className="flex flex-wrap gap-2 justify-center">
+              {/* Mobile: custom multi-select */}
+              <div className="sm:hidden">
+                <MobileTagFilter
+                  tags={allTags}
+                  selected={activeTags}
+                  onChange={setActiveTags}
+                  allLabel={tr.ui.allProjects}
+                  searchPlaceholder={searchPlaceholder}
+                  clearLabel={clearLabel}
+                />
+              </div>
+
+              {/* Desktop: pill filters */}
+              <div className="hidden sm:flex flex-wrap gap-2 justify-center">
                 <button
-                  onClick={() => setActiveTag(null)}
+                  onClick={() => setActiveTags([])}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    activeTag === null
+                    activeTags.length === 0
                       ? "bg-sky-500 text-white"
                       : "bg-slate-800 border border-slate-700 text-slate-400 hover:text-slate-200"
                   }`}
@@ -78,9 +237,9 @@ export default function Projects({ data }: ProjectsProps) {
                 {visibleTags.map((tag) => (
                   <button
                     key={tag}
-                    onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                    onClick={() => setActiveTags(activeTags.includes(tag) ? [] : [tag])}
                     className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                      activeTag === tag
+                      activeTags.includes(tag)
                         ? "bg-sky-500 text-white"
                         : "bg-slate-800 border border-slate-700 text-slate-400 hover:text-slate-200"
                     }`}
@@ -89,7 +248,6 @@ export default function Projects({ data }: ProjectsProps) {
                   </button>
                 ))}
 
-                {/* Expand / collapse hidden tags */}
                 {hiddenCount > 0 && !showAllTags && (
                   <button
                     onClick={() => setTagsExpanded(true)}
@@ -182,7 +340,7 @@ export default function Projects({ data }: ProjectsProps) {
                         <button
                           onClick={() => setLightbox({ project, idx: 0 })}
                           aria-label={`Ver ${project.screenshots!.length} capturas`}
-                          className="relative text-slate-400 hover:text-slate-200 transition-colors"
+                          className="hidden sm:block relative text-slate-400 hover:text-slate-200 transition-colors"
                         >
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
