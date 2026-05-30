@@ -34,13 +34,13 @@ describe("Projects", () => {
 
   it("renders demo link when url is present", () => {
     render(<Projects data={mockProjects} />);
-    const demoLink = screen.getByText("Ver demo →");
+    const demoLink = screen.getByRole("link", { name: "Ver demo" });
     expect(demoLink).toHaveAttribute("href", "https://miapp.com");
   });
 
   it("does not render demo link when url is null", () => {
     render(<Projects data={mockProjects} />);
-    const demoLinks = screen.getAllByText("Ver demo →");
+    const demoLinks = screen.getAllByRole("link", { name: "Ver demo" });
     expect(demoLinks).toHaveLength(1);
   });
 });
