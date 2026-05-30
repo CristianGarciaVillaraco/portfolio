@@ -15,6 +15,19 @@ export interface SkillGroup {
   items: string[];
 }
 
+export interface ExperienceLogbookEntry {
+  title: string;
+  general: string;
+  technical: string;
+}
+
+export interface ExperienceLogbook {
+  note?: string;
+  role?: string;
+  description?: string;
+  entries?: ExperienceLogbookEntry[];
+}
+
 export interface Experience {
   company: string;
   role: string;
@@ -29,9 +42,11 @@ export interface Experience {
 export interface Project {
   name: string;
   tech: string[];
+  tags?: string[];
   url: string | null;
   repo: string | null;
   status?: "in-development" | "completed";
+  screenshots?: string[];
 }
 
 export interface Education {
@@ -93,6 +108,17 @@ export interface Translations {
     contactBtn: string;
     comingSoon: string;
     inDevelopment: string;
+    seeMore: string;
+    close: string;
+    allProjects: string;
+    showMore: string;
+    showLess: string;
+    logbook: string;
+    general: string;
+    technical: string;
+    sendEmail: string;
+    contactVia: string;
+    remote: string;
   };
   stats: {
     years: string;
@@ -102,6 +128,7 @@ export interface Translations {
   educationItems: { institution: string; degree: string; year: string }[];
   languageItems: { name: string; level: string }[];
   projects: Record<string, ProjectTranslation>;
+  experience: Record<string, ExperienceLogbook>;
 }
 
 export interface PortfolioData {

@@ -1,10 +1,13 @@
 "use client";
 
-import { motion, useInView, type Variants } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence, type Variants } from "framer-motion";
+import { useRef, useState } from "react";
 import { Experience as ExperienceType } from "@/types/portfolio";
 import { useTranslation } from "@/hooks/useTranslation";
 import { getTechUrl } from "@/lib/techLinks";
+import ExperienceLogbookModal from "./ExperienceLogbookModal";
+
+const SHOW_LIMIT = 8;
 
 interface ExperienceProps {
   data: ExperienceType[];
@@ -33,7 +36,13 @@ export default function Experience({ data }: ExperienceProps) {
   const { tr, lang } = useTranslation();
   const locale = lang === "en" ? "en-US" : "es-ES";
 
+  const needsCollapse = data.length > SHOW_LIMIT;
+  const [expanded, setExpanded] = useState(false);
+  const [openLogbook, setOpenLogbook] = useState<string | null>(null);
+  const visible = needsCollapse && !expanded ? data.slice(0, SHOW_LIMIT) : data;
+
   return (
+    <>
     <section id="experience" className="py-20 px-6 bg-slate-900 dot-bg">
       <div className="max-w-4xl mx-auto">
         <motion.h2
@@ -53,94 +62,135 @@ export default function Experience({ data }: ExperienceProps) {
             transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
           />
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate={inView ? "show" : "hidden"}
-            className="space-y-8"
-          >
-            {data.map((job, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariant}
-                className="pl-6 relative"
-              >
-                <motion.div
-                  className="absolute -left-[9px] top-1 w-4 h-4 bg-sky-500 rounded-full ring-2 ring-slate-900"
-                  initial={{ scale: 0 }}
-                  animate={inView ? { scale: 1 } : {}}
-                  transition={{
-                    delay: 0.5 + index * 0.2,
-                    duration: 0.3,
-                    type: "spring",
-                    stiffness: 300,
-                  }}
-                />
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                  <h3 className="text-white font-semibold text-lg">{job.role}</h3>
-                  <span className="text-slate-400 text-sm">
-                    {formatDate(job.startDate, locale, tr.ui.current)} — {formatDate(job.endDate, locale, tr.ui.current)}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  {job.companyUrl ? (
-                    <a
-                      href={job.companyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 text-sky-400 font-medium hover:text-sky-300 transition-colors"
-                    >
-                      {job.company}
-                      <svg
-                        className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 transition-opacity"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  ) : (
-                    <p className="text-sky-400 font-medium">{job.company}</p>
-                  )}
-                  {job.location && (
-                    <span className="text-slate-500 text-sm">· {job.location}</span>
-                  )}
-                </div>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  {job.description}
-                </p>
-                {job.tech && job.tech.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {job.tech.map((t) => {
-                      const url = getTechUrl(t);
-                      return url ? (
-                        <a
-                          key={t}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-2 py-1 bg-slate-700 hover:bg-slate-600 text-sky-300 rounded text-xs transition-colors"
+          <div className="relative">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate={inView ? "show" : "hidden"}
+              className="space-y-8"
+            >
+              {visible.map((job, index) => (
+                <motion.div key={index} variants={itemVariant} className="pl-6 relative">
+                  <motion.div
+                    className="absolute -left-[9px] top-1 w-4 h-4 bg-sky-500 rounded-full ring-2 ring-slate-900"
+                    initial={{ scale: 0 }}
+                    animate={inView ? { scale: 1 } : {}}
+                    transition={{ delay: 0.5 + index * 0.2, duration: 0.3, type: "spring", stiffness: 300 }}
+                  />
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h3 className="text-white font-semibold text-lg">{tr.experience?.[job.company]?.role ?? job.role}</h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-slate-400 text-sm">
+                        {formatDate(job.startDate, locale, tr.ui.current)} — {formatDate(job.endDate, locale, tr.ui.current)}
+                      </span>
+                      {tr.experience?.[job.company]?.entries?.length ? (
+                        <button
+                          onClick={() => setOpenLogbook(job.company)}
+                          aria-label={tr.ui.logbook}
+                          className="text-slate-500 hover:text-sky-400 transition-colors"
                         >
-                          {t}
-                        </a>
-                      ) : (
-                        <span
-                          key={t}
-                          className="px-2 py-1 bg-slate-700 text-sky-300 rounded text-xs"
-                        >
-                          {t}
-                        </span>
-                      );
-                    })}
+                          <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                          </svg>
+                        </button>
+                      ) : null}
+                    </div>
                   </div>
-                )}
+                  <div className="flex items-center gap-2 mb-2">
+                    {job.companyUrl ? (
+                      <a href={job.companyUrl} target="_blank" rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-1 text-sky-400 font-medium hover:text-sky-300 transition-colors">
+                        {job.company}
+                        <svg className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <p className="text-sky-400 font-medium">{job.company}</p>
+                    )}
+                    {job.location && <span className="text-slate-500 text-sm">· {job.location === "Remoto" ? tr.ui.remote : job.location}</span>}
+                  </div>
+                  <p className="text-slate-300 text-sm leading-relaxed">{tr.experience?.[job.company]?.description ?? job.description}</p>
+                  {job.tech && job.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {job.tech.map((t) => {
+                        const url = getTechUrl(t);
+                        return url ? (
+                          <a key={t} href={url} target="_blank" rel="noopener noreferrer"
+                            className="px-2 py-1 bg-slate-700 hover:bg-slate-600 text-sky-300 rounded text-xs transition-colors">
+                            {t}
+                          </a>
+                        ) : (
+                          <span key={t} className="px-2 py-1 bg-slate-700 text-sky-300 rounded text-xs">{t}</span>
+                        );
+                      })}
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Fade + button — only when collapsed and limit exceeded */}
+            <AnimatePresence>
+              {needsCollapse && !expanded && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute bottom-0 left-0 right-0 h-48 flex items-end justify-center pb-2"
+                  style={{ background: "linear-gradient(to bottom, transparent, #0f172a)" }}
+                >
+                  <button
+                    onClick={() => setExpanded(true)}
+                    className="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:text-white hover:border-sky-500/50 text-sm font-medium transition-colors"
+                  >
+                    {tr.ui.showMore}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Show less button — appears below the list when expanded */}
+          <AnimatePresence>
+            {needsCollapse && expanded && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="flex justify-center mt-8"
+              >
+                <button
+                  onClick={() => setExpanded(false)}
+                  className="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:text-white hover:border-sky-500/50 text-sm font-medium transition-colors"
+                >
+                  {tr.ui.showLess}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="18 15 12 9 6 15" />
+                  </svg>
+                </button>
               </motion.div>
-            ))}
-          </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>
+
+    <AnimatePresence>
+      {openLogbook && tr.experience?.[openLogbook] && (
+        <ExperienceLogbookModal
+          company={openLogbook}
+          logbook={tr.experience[openLogbook]}
+          onClose={() => setOpenLogbook(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   );
 }
