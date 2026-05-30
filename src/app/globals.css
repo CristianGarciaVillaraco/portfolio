@@ -24,7 +24,34 @@ body {
   color: var(--foreground);
 }
 
+html {
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+.modal-scroll::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
 .dot-bg {
   background-image: radial-gradient(circle, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+
