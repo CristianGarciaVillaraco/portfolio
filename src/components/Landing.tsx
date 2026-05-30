@@ -61,10 +61,9 @@ export default function Landing({ data }: LandingProps) {
             <Image
               src={data.photo}
               alt={data.name}
-              width={120}
-              height={120}
-              className="rounded-full object-cover ring-4 ring-slate-700"
-              style={{ width: 120, height: 120 }}
+              width={128}
+              height={176}
+              className="w-28 h-36 sm:w-32 sm:h-44 rounded-full object-cover ring-4 ring-slate-700"
               priority
             />
           </motion.div>
