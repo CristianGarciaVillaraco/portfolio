@@ -59,7 +59,7 @@ export default function Landing({ data }: LandingProps) {
         {data.photo && (
           <motion.div variants={item} className="mb-6">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${data.photo}`}
+              src={data.photo}
               alt={data.name}
               width={120}
               height={120}
@@ -125,7 +125,7 @@ export default function Landing({ data }: LandingProps) {
             <span className="hidden sm:inline">{tr.ui.contactBtn}</span>
           </motion.a>
           <motion.a
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/cv.pdf`}
+            href="/cv.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
