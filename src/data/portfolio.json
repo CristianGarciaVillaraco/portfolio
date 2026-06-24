@@ -10,10 +10,30 @@
     "photo": "/photo.jpg"
   },
   "skills": [
-    { "category": "Frontend", "items": ["Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "PrimeNG", "Paper.js"] },
-    { "category": "Backend", "items": ["Node.js", "Express.js", "MongoDB", "REST APIs"] },
-    { "category": "Herramientas", "items": ["Git", "GitLab CI/CD", "SonarQube", "Jest", "Mocha", "Chai", "npm"] },
-    { "category": "IA & Workflow", "items": ["Claude", "Prompt Engineering", "AI-Assisted Dev"] }
+    {
+      "category": "Frontend",
+      "items": ["Angular", "RxJS", "Signals", "TypeScript", "JavaScript", "Vue", "HTML5", "CSS3"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express.js", "MongoDB", "REST APIs"]
+    },
+    {
+      "category": "Testing & DevOps",
+      "items": [
+        "Jest",
+        "Jasmine",
+        "Playwright",
+        "GitLab CI/CD",
+        "GitHub Actions",
+        "SonarQube",
+        "Git"
+      ]
+    },
+    {
+      "category": "UI & otros",
+      "items": ["PrimeNG", "Konva.js", "Paper.js", "Tailwind", "Dexie", "PWA", "Cloudflare Workers"]
+    }
   ],
   "experience": [
     {
@@ -21,10 +41,21 @@
       "role": "Desarrollador Fullstack",
       "location": "Zaragoza",
       "startDate": "2025-12",
-      "endDate": null,
+      "endDate": "2026-06",
       "companyUrl": "https://moontech-industrial.com/",
-      "description": "Desarrollo de interfaces web con Angular 18/19 en arquitectura de microfrontends (shell + librería de componentes compartidos) para el sistema ERIMS de gestión de flotas robóticas (AGVs/AMRs). Implementación de aplicaciones internas en Node.js para configuración de lógica de control robótico con MongoDB. Creación de funciones JavaScript para orquestación intralogística y automatización de procesos industriales.",
-      "tech": ["Angular 18/19", "TypeScript", "Node.js", "MongoDB", "Vue", "Konva.js", "Jest", "Docker", "SSH", "PrimeNG", "GitLab CI/CD"]
+      "description": "Trabajé en interfaces web con Angular 18/19 en arquitectura de microfrontends (shell + librería de componentes compartidos) para el sistema ERIMS de gestión de flotas robóticas (AGVs/AMRs), e implementé aplicaciones internas en Node.js para configuración de lógica de control robótico con MongoDB. Aportes destacados: simulador propio de dispositivos PDA, integración con PLCs en el simulador AMR del equipo, editor visual de etiquetas con Vue + Konva.js, módulo de impresoras universales y sistema de filtros declarativos.",
+      "tech": [
+        "Angular 18/19",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Vue",
+        "Konva.js",
+        "Jest",
+        "SSH",
+        "PrimeNG",
+        "GitLab CI/CD"
+      ]
     },
     {
       "company": "Ibertech IT — Indra",
@@ -33,8 +64,18 @@
       "startDate": "2022-11",
       "endDate": "2025-08",
       "companyUrl": "https://www.indracompany.com",
-      "description": "Desarrollo de módulos en Angular dentro de una arquitectura de microservicios: listados, creación, edición y detalle de registros. Implementación de generación de PDFs con plantillas para reportes. Participación en un módulo avanzado con Paper.js para visualización gráfica de infraestructuras ferroviarias. Refactorizaciones, cobertura de tests unitarios y métricas con SonarQube.",
-      "tech": ["Angular", "TypeScript", "JavaScript", "Paper.js", "Lodash", "SonarQube", "Git"]
+      "description": "Desarrollo de módulos completos en Angular 11 con RxJS (pipes, transformación de streams), formularios y vistas de detalle, sobre arquitectura de microservicios para clientes finales en Irlanda y Estonia. Módulo gráfico con Paper.js para visualización vectorial de redes ferroviarias (vías, señales, elementos interactivos). Diseño de plantillas Jaspersoft completas para los reporters de listados y vistas de detalle. Refactor con foco en cobertura de tests unitarios y métricas SonarQube.",
+      "tech": [
+        "Angular 11",
+        "TypeScript",
+        "JavaScript",
+        "RxJS",
+        "Paper.js",
+        "Jaspersoft",
+        "Lodash",
+        "SonarQube",
+        "Git"
+      ]
     },
     {
       "company": "Ibertech IT — Inetum",
@@ -54,7 +95,17 @@
       "endDate": "2021-12",
       "companyUrl": "https://www.nttdata.com",
       "description": "Desarrollo de un generador automático de módulos y componentes Angular en ExpressJS + TypeScript a partir de plantillas. Tests unitarios, editor gráfico drag & drop para diseño de modelos, y refactorizaciones con patrones funcionales usando Ramda. Soporte en aplicación ExpressJS de validación de modelos JSON.",
-      "tech": ["Node.js", "ExpressJS", "Angular", "TypeScript", "Mocha", "Chai", "Ramda", "Lodash"]
+      "tech": [
+        "Node.js",
+        "ExpressJS",
+        "Handlebars",
+        "Angular",
+        "TypeScript",
+        "Mocha",
+        "Chai",
+        "Ramda",
+        "Lodash"
+      ]
     }
   ],
   "projects": [
@@ -67,11 +118,25 @@
     },
     {
       "name": "OPCG Vault",
-      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "SQLite", "Auth.js"],
-      "tags": ["Next.js", "Full-Stack"],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "SQLite (drift)",
+        "ML Kit OCR",
+        "Google Drive API",
+        "Material Design"
+      ],
+      "tags": ["Mobile", "Full-Stack", "Flutter"],
       "url": null,
-      "repo": "https://github.com/CristianGarciaVillaraco/opcg-vault",
-      "status": "in-development"
+      "repo": null,
+      "status": "in-development",
+      "nameNote": "nombre provisional",
+      "phases": [
+        { "status": "done" },
+        { "status": "in-progress" },
+        { "status": "pending" },
+        { "status": "pending" }
+      ]
     },
     {
       "name": "Invoice Generator",
@@ -105,8 +170,14 @@
     }
   ],
   "languages": [
-    { "name": "Español", "level": "Nativo" },
-    { "name": "Inglés", "level": "Básico" }
+    {
+      "name": "Español",
+      "level": "Nativo"
+    },
+    {
+      "name": "Inglés",
+      "level": "Lectura técnica (A2)"
+    }
   ],
   "i18n": {
     "es": {
@@ -142,7 +213,7 @@
           {
             "icon": "bolt",
             "title": "Aprendizaje continuo",
-            "body": "Autodidacta por convicción. Explorando Godot para videojuegos e integrando IA en el flujo de trabajo diario."
+            "body": "Autodidacta por convicción. Me gusta entender por dentro lo que uso y construir cosas propias para probar nuevas tecnologías."
           },
           {
             "icon": "users",
@@ -194,7 +265,21 @@
         "technical": "Técnico",
         "sendEmail": "Enviar email",
         "contactVia": "O contáctame por",
-        "remote": "Remoto"
+        "remote": "Remoto",
+        "statusPlanned": "Planificado",
+        "statusInDevelopment": "En desarrollo",
+        "statusPaused": "En pausa",
+        "statusReleased": "Publicado",
+        "statusCancelled": "Cancelado",
+        "statusAbandoned": "Abandonado",
+        "statusCompleted": "Completado",
+        "phasesTitle": "Fases del proyecto",
+        "viewPhases": "Ver fases",
+        "phasePending": "Pendiente",
+        "phaseInProgress": "En curso",
+        "phaseDone": "Completada",
+        "phaseCancelled": "Cancelada",
+        "phasesUpcoming": "Próximas fases en curso"
       },
       "stats": {
         "years": "años de experiencia",
@@ -211,16 +296,17 @@
           "institution": "IES Segundo de Chomón",
           "degree": "Técnico en sistemas microinformático y redes",
           "year": "2015 – 2017"
-        },
-        {
-          "institution": "IES Segundo de Chomón",
-          "degree": "Ayudante auxiliar de electricidad y telecomunicaciones",
-          "year": "2014 – 2015"
         }
       ],
       "languageItems": [
-        { "name": "Español", "level": "Nativo" },
-        { "name": "Inglés", "level": "Básico" }
+        {
+          "name": "Español",
+          "level": "Nativo"
+        },
+        {
+          "name": "Inglés",
+          "level": "Lectura técnica (A2)"
+        }
       ],
       "projects": {
         "Ibertech Heroes App": {
@@ -234,13 +320,31 @@
           ]
         },
         "OPCG Vault": {
-          "tagline": "Gestor de colección de cartas One Piece",
-          "description": "Aplicación web para gestionar colecciones personales del One Piece Card Game. Permite registrar cartas, controlar cantidades y explorar colecciones de otros usuarios.",
+          "tagline": "Gestor de colección de cartas coleccionables",
+          "description": "Aplicación móvil offline-first para gestionar colecciones personales de cartas TCG (varios juegos): registrar cartas, controlar cantidades, escanear con la cámara y explorar la colección.",
           "highlights": [
-            "Catálogo de más de 3.300 cartas importadas",
-            "Autenticación con Auth.js v5",
-            "Base de datos con SQLite + Prisma ORM",
-            "Gestión de colección personal y de otros usuarios"
+            "Catálogo de más de 4.500 cartas bundleado en local",
+            "Scanner de cámara con ML Kit OCR y revisión por carta",
+            "Backup local con export/import",
+            "Arquitectura multi-juego (abstracción de TCG)"
+          ],
+          "phases": [
+            {
+              "name": "v0.1 — MVP móvil offline",
+              "description": "Catálogo bundleado en local, colección, filtros, búsqueda y stats sobre SQLite (drift)."
+            },
+            {
+              "name": "v0.2 — Rediseño + multi-TCG + scanner",
+              "description": "Rediseño visual, abstracción multi-juego, scanner cámara con OCR y flujo de revisión por carta. Pendiente de pruebas en dispositivo real."
+            },
+            {
+              "name": "v1.0 — Lanzamiento Play Store",
+              "description": "Export/import a fichero, identidad final, legal, estabilidad y build firmado."
+            },
+            {
+              "name": "v1.x — Post-lanzamiento",
+              "description": "Más juegos (Pokémon, Magic, YGO, Lorcana, DBS), performance, intercambios en persona y companion web."
+            }
           ]
         },
         "Invoice Generator": {
@@ -266,6 +370,16 @@
               "title": "Diseñador de etiquetas",
               "general": "Editor visual completo para diseñar etiquetas industriales personalizadas, genérico para cualquier entidad gracias al mapeo de variables desde base de datos.\n- Soporta texto, imágenes, QR, códigos de barras y líneas\n- Preview fiel al resultado de impresión antes de imprimir\n- Exportación ZPL para impresoras Zebra",
               "technical": "Vue + Konva.js sobre canvas. Configuración previa desde BD: título, tamaño, entidad y campos a mapear.\n- Editor con zoom, encuadre, Ctrl+Z, guías de alineación y snap magnético desactivable\n- Panel lateral con árbol de elementos y datos de ejemplo dinámicos\n- Elementos: texto (fuente, color, multilinea, variable o plano), QR, imagen (fija o dinámica), barcode, línea, grupos\n- Preview de impresión con selector de configuración desde BD"
+            },
+            {
+              "title": "Simulador propio de dispositivos PDA",
+              "general": "Simulador propio para diseñar y probar pantallas pensadas para PDA antes de tener el dispositivo físico, configurable por modelo.\n- Registro a mano de modelos de PDA reales con sus características\n- Mapeo de teclas físicas, consola de debug y captura de pantalla\n- Botón de escáner emulado con códigos personalizables por usuario\n- Apertura por URL directa y animaciones personalizadas para estados de carga y caída de conexión",
+              "technical": "Construido desde cero. Cada modelo de PDA queda registrado con un identificador único y su configuración de teclas reutilizable.\n- Emulación del escáner físico con listado de códigos configurable\n- Pantallas de animación personalizadas (logo de empresa) para búsqueda, caída de página y pérdida de conexión\n- Apertura por URL como en la PDA real"
+            },
+            {
+              "title": "Integración con PLCs en el simulador AMR",
+              "general": "Diseñé e integré la sección de PLCs en el simulador de AMR del equipo (mapa + nodos + rutas creado por el Arquitecto).\n- Configuración del PLC al que se conecta el simulador desde la propia herramienta\n- Sección visual con el estado de la conexión\n- La parte se conservó intacta cuando otro compañero refactorizó posteriormente la interfaz del simulador",
+              "technical": "Capa nueva sobre el simulador AMR existente, pensada como independiente del resto del simulador.\n- Configuración declarativa de PLC y parámetros de conexión\n- Indicador visual del estado de la conexión, refrescado en runtime"
             },
             {
               "title": "Device detector",
@@ -374,7 +488,7 @@
           {
             "icon": "bolt",
             "title": "Continuous learning",
-            "body": "Self-taught by choice. Exploring Godot for game development and integrating AI into my daily workflow."
+            "body": "Self-taught by choice. I like understanding what I use from the inside and building my own things to try new technologies."
           },
           {
             "icon": "users",
@@ -426,7 +540,21 @@
         "technical": "Technical",
         "sendEmail": "Send email",
         "contactVia": "Or contact me on",
-        "remote": "Remote"
+        "remote": "Remote",
+        "statusPlanned": "Planned",
+        "statusInDevelopment": "In development",
+        "statusPaused": "Paused",
+        "statusReleased": "Released",
+        "statusCancelled": "Cancelled",
+        "statusAbandoned": "Abandoned",
+        "statusCompleted": "Completed",
+        "phasesTitle": "Project phases",
+        "viewPhases": "View phases",
+        "phasePending": "Pending",
+        "phaseInProgress": "In progress",
+        "phaseDone": "Done",
+        "phaseCancelled": "Cancelled",
+        "phasesUpcoming": "Upcoming phases in the works"
       },
       "stats": {
         "years": "years of experience",
@@ -443,16 +571,17 @@
           "institution": "IES Segundo de Chomón",
           "degree": "Technician in microcomputer systems and networks",
           "year": "2015 – 2017"
-        },
-        {
-          "institution": "IES Segundo de Chomón",
-          "degree": "Electrical and telecommunications auxiliary",
-          "year": "2014 – 2015"
         }
       ],
       "languageItems": [
-        { "name": "Spanish", "level": "Native" },
-        { "name": "English", "level": "Basic" }
+        {
+          "name": "Spanish",
+          "level": "Native"
+        },
+        {
+          "name": "English",
+          "level": "Technical reading (A2)"
+        }
       ],
       "projects": {
         "Ibertech Heroes App": {
@@ -466,13 +595,31 @@
           ]
         },
         "OPCG Vault": {
-          "tagline": "One Piece Card Game collection manager",
-          "description": "Web application for managing personal One Piece Card Game collections. Track cards, manage quantities, and browse other users' collections.",
+          "tagline": "Trading card collection manager",
+          "description": "Offline-first mobile app to manage personal TCG card collections (multiple games): track cards, manage quantities, scan with the camera and browse the collection.",
           "highlights": [
-            "Catalog of over 3,300 imported cards",
-            "Authentication with Auth.js v5",
-            "Database with SQLite + Prisma ORM",
-            "Personal and community collection management"
+            "Catalog of 4,500+ cards bundled locally",
+            "Camera scanner with ML Kit OCR and per-card review",
+            "Local backup with file export/import",
+            "Multi-game architecture (TCG abstraction)"
+          ],
+          "phases": [
+            {
+              "name": "v0.1 — Offline mobile MVP",
+              "description": "Catalog bundled locally, collection, filters, search and stats on SQLite (drift)."
+            },
+            {
+              "name": "v0.2 — Redesign + multi-TCG + scanner",
+              "description": "Visual redesign, multi-game abstraction, camera scanner with OCR and per-card review flow. Pending real-device testing."
+            },
+            {
+              "name": "v1.0 — Play Store release",
+              "description": "File-based export/import, final branding, legal, stability and signed build."
+            },
+            {
+              "name": "v1.x — Post-release",
+              "description": "More games (Pokémon, Magic, YGO, Lorcana, DBS), performance, in-person trading and companion web."
+            }
           ]
         },
         "Invoice Generator": {
@@ -500,6 +647,16 @@
               "title": "Label Designer",
               "general": "Full visual editor to design custom industrial labels, generic for any entity through variable mapping from the database.\n- Supports text, images, QR codes, barcodes and lines\n- Print-accurate preview before printing\n- ZPL export for Zebra printers",
               "technical": "Vue + Konva.js on canvas. Pre-configured from DB: title, size, entity and fields to map.\n- Editor with zoom, framing, Ctrl+Z, alignment guide lines and toggleable magnetic snap\n- Side panel with element tree and dynamic sample data\n- Elements: text (font, color, multiline, variable or plain), QR, image (fixed or dynamic), barcode, line, groups\n- Print preview with configuration selector from DB"
+            },
+            {
+              "title": "Custom PDA device simulator",
+              "general": "Custom simulator to design and test PDA-targeted screens before having the physical device, configurable per model.\n- Manual registration of real PDA models with their characteristics\n- Physical-key mapping, debug console, screen capture\n- Emulated scanner button with user-customizable code lists\n- Direct URL opening and tailored animations for loading and connection-loss states",
+              "technical": "Built from scratch. Each PDA model is stored with a unique ID and its reusable key configuration.\n- Physical scanner emulated with a configurable code list\n- Custom animation screens (company logo) for search, page-down and connection-loss states\n- URL-based opening just like a real PDA"
+            },
+            {
+              "title": "PLC integration in the AMR simulator",
+              "general": "Designed and integrated the PLC section in the team's AMR simulator (map + nodes + routes, built by the Architect).\n- PLC connection configuration from the tool itself\n- Visual section showing the connection status\n- The section was kept intact when a colleague later refactored the simulator interface",
+              "technical": "New layer on top of the existing AMR simulator, designed as independent from the rest of the simulator.\n- Declarative PLC and connection-parameter configuration\n- Runtime-refreshed visual indicator of connection status"
             },
             {
               "title": "Device Detector",
