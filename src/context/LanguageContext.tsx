@@ -14,6 +14,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("lang") as Lang | null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- post-mount hydration from localStorage; avoids SSR mismatch
     if (saved === "es" || saved === "en") setLangState(saved);
   }, []);
 
@@ -22,11 +23,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("lang", l);
   };
 
-  return (
-    <LanguageContext.Provider value={{ lang, setLang }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={{ lang, setLang }}>{children}</LanguageContext.Provider>;
 }
 
 export const useLang = () => useContext(LanguageContext);
