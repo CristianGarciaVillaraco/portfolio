@@ -39,14 +39,36 @@ export interface Experience {
   tech?: string[];
 }
 
+export type ProjectStatus =
+  | "planned"
+  | "in-development"
+  | "paused"
+  | "released"
+  | "cancelled"
+  | "abandoned"
+  | "completed";
+
+export type PhaseStatus = "pending" | "in-progress" | "done" | "cancelled";
+
+export interface ProjectPhase {
+  status: PhaseStatus;
+}
+
+export interface ProjectPhaseTranslation {
+  name: string;
+  description?: string;
+}
+
 export interface Project {
   name: string;
+  nameNote?: string;
   tech: string[];
   tags?: string[];
   url: string | null;
   repo: string | null;
-  status?: "in-development" | "completed";
+  status?: ProjectStatus;
   screenshots?: string[];
+  phases?: ProjectPhase[];
 }
 
 export interface Education {
@@ -64,6 +86,7 @@ export interface ProjectTranslation {
   tagline: string;
   description: string;
   highlights: string[];
+  phases?: ProjectPhaseTranslation[];
 }
 
 export interface Translations {
@@ -108,6 +131,20 @@ export interface Translations {
     contactBtn: string;
     comingSoon: string;
     inDevelopment: string;
+    statusPlanned: string;
+    statusInDevelopment: string;
+    statusPaused: string;
+    statusReleased: string;
+    statusCancelled: string;
+    statusAbandoned: string;
+    statusCompleted: string;
+    phasesTitle: string;
+    viewPhases: string;
+    phasePending: string;
+    phaseInProgress: string;
+    phaseDone: string;
+    phaseCancelled: string;
+    phasesUpcoming: string;
     seeMore: string;
     close: string;
     allProjects: string;
