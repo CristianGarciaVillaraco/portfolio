@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es" className="scroll-smooth" style={{ colorScheme: "dark" }}>
       <body className={`${inter.className} bg-slate-900 text-white`}>
         <Providers>{children}</Providers>
       </body>
