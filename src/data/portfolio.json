@@ -37,6 +37,28 @@
   ],
   "experience": [
     {
+      "company": "Hiberus",
+      "role": "Frontend Developer Angular",
+      "location": "Zaragoza",
+      "startDate": "2026-08",
+      "endDate": null,
+      "companyUrl": "https://www.hiberus.com/",
+      "description": "Desarrollo y mantenimiento de la librería de componentes compartida y del Storybook consumidos por múltiples equipos internos de Eroski, dentro del rediseño del sistema de diseño del cliente. Frontend con Angular 20 (signals) sobre Kendo UI (pre-existente), iconos Lucide y specs de Figma. Ceremonias diarias con equipos de gestión y UX/UI. Aún en primeras semanas: por ahora, implementación de specs y revisión, sin aportaciones propias destacables todavía.",
+      "tech": [
+        "Angular 20",
+        "TypeScript",
+        "Signals",
+        "Kendo UI",
+        "Storybook 10",
+        "Lucide",
+        "Figma",
+        "GitLab",
+        "Jenkins",
+        "SonarQube",
+        "Jira"
+      ]
+    },
+    {
       "company": "Moontech Industrial Solutions",
       "role": "Desarrollador Fullstack",
       "location": "Zaragoza",
@@ -150,6 +172,19 @@
         "/screenshots/invoice-generator/03-preview.png",
         "/screenshots/invoice-generator/05-mobile-list.png"
       ]
+    },
+    {
+      "name": "Oxenfree Subtitles Fix",
+      "tech": [
+        "Reverse Engineering",
+        ".NET Decompilation (ILSpy)",
+        "Unity AssetBundle Analysis",
+        "Windows Batch",
+        "Python"
+      ],
+      "tags": ["Reverse Engineering", "Community Fix", "Windows"],
+      "url": "https://github.com/CristianGarciaVillaraco/oxenfree-spanish-subs-fix/releases/latest",
+      "repo": "https://github.com/CristianGarciaVillaraco/oxenfree-spanish-subs-fix"
     }
   ],
   "education": [
@@ -356,9 +391,22 @@
             "PWA instalable en móvil y escritorio",
             "Sync opcional entre dispositivos con Cloudflare Workers D1"
           ]
+        },
+        "Oxenfree Subtitles Fix": {
+          "tagline": "Fix de subtítulos con ingeniería inversa (Unity 6, .NET)",
+          "description": "Mini-mod público para Oxenfree en Steam donde los subtítulos NPC dejaron de aparecer en idiomas con doblaje tras la migración del juego a Unity 6. Diagnóstico end-to-end: decompilación de Assembly-CSharp.dll con ILSpy, análisis binario de bundles Unity con Python, reverse-engineering del hash djb2-xor de Unity PlayerPrefs. Distribución vía GitHub Release + Steam Community Guide bilingüe + reporte oficial al estudio.",
+          "highlights": [
+            "Decompilación .NET con ilspycmd sobre Assembly-CSharp.dll para localizar la causa raíz",
+            "Reverse-engineering del hash de Unity PlayerPrefs (djb2-xor) por brute-force contra claves conocidas",
+            "Análisis binario de bundles Unity con Python (formato UnityFS + LZ4)",
+            "Publicado como fix público: GitHub Release, Steam Community Guide ES/EN y reporte al estudio"
+          ]
         }
       },
       "experience": {
+        "Hiberus": {
+          "entries": []
+        },
         "Moontech Industrial Solutions": {
           "entries": [
             {
@@ -631,9 +679,24 @@
             "Installable PWA on mobile and desktop",
             "Optional multi-device sync with Cloudflare Workers D1"
           ]
+        },
+        "Oxenfree Subtitles Fix": {
+          "tagline": "Subtitle fix through reverse engineering (Unity 6, .NET)",
+          "description": "Public community fix for Oxenfree on Steam where NPC subtitles stopped appearing in dubbed languages after the game's migration to Unity 6. End-to-end diagnosis: Assembly-CSharp.dll decompilation with ILSpy, binary analysis of Unity bundles with Python, and reverse-engineering of the Unity PlayerPrefs djb2-xor hash. Distributed via GitHub Release, bilingual Steam Community Guide and official bug report to the studio.",
+          "highlights": [
+            ".NET decompilation with ilspycmd on Assembly-CSharp.dll to pinpoint the root cause",
+            "Reverse-engineered the Unity PlayerPrefs hash (djb2-xor) via brute-force against known keys",
+            "Binary analysis of Unity asset bundles with Python (UnityFS + LZ4)",
+            "Shipped as a public fix: GitHub Release, ES/EN Steam Community Guide and studio bug report"
+          ]
         }
       },
       "experience": {
+        "Hiberus": {
+          "role": "Angular Frontend Developer",
+          "description": "Development and maintenance of the shared component library and Storybook consumed by multiple internal teams at Eroski, as part of the client's design system redesign. Frontend with Angular 20 (signals) on top of Kendo UI (pre-existing), Lucide icons and Figma specs. Daily ceremonies with the management and UX/UI teams. Still in the early weeks: for now, implementing specs and reviewing, no significant own contributions yet.",
+          "entries": []
+        },
         "Moontech Industrial Solutions": {
           "role": "Fullstack Developer",
           "description": "Building web interfaces with Angular 18/19 in a microfrontend architecture (shell + shared component library) for the ERIMS robotic fleet management system (AGVs/AMRs). Implementing internal Node.js applications for robotic control logic configuration with MongoDB. Creating JavaScript functions for intralogistics orchestration and industrial process automation.",
