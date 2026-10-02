@@ -43,17 +43,19 @@
       "startDate": "2026-08",
       "endDate": null,
       "companyUrl": "https://www.hiberus.com/",
-      "description": "Desarrollo y mantenimiento de la librería de componentes compartida y del Storybook consumidos por múltiples equipos internos de Eroski, dentro del rediseño del sistema de diseño del cliente. Frontend con Angular 20 (signals) sobre Kendo UI (pre-existente), iconos Lucide y specs de Figma. Ceremonias diarias con equipos de gestión y UX/UI. Aún en primeras semanas: por ahora, implementación de specs y revisión, sin aportaciones propias destacables todavía.",
+      "description": "Desarrollo y mantenimiento del core de frontend de Eroski en Angular 20, que incluye la librería de componentes compartida. Actualmente centrado en el rediseño de esa librería junto al equipo de UX/UI, que diseña los componentes nuevos en Figma sobre una base de Kendo UI.",
       "tech": [
         "Angular 20",
         "TypeScript",
         "Signals",
         "Kendo UI",
         "Storybook 10",
+        "Jest",
         "Lucide",
         "Figma",
         "GitLab",
         "Jenkins",
+        "JFrog",
         "SonarQube",
         "Jira"
       ]
@@ -405,7 +407,18 @@
       },
       "experience": {
         "Hiberus": {
-          "entries": []
+          "entries": [
+            {
+              "title": "Rediseño — agosto",
+              "general": "Componentes de navegación del nuevo sistema de diseño de Eroski — breadcrumb, anclas, tabs y buscador — documentados en Storybook para que los consuma el resto de equipos.\n- Partiendo de Kendo UI, pero con restyling completo y API de inputs/outputs propio, adaptado a cada caso de uso real\n- Integrados en el flujo de revisión conjunto con el equipo de UX/UI",
+              "technical": "Angular 20 con signals sobre Kendo UI.\n- Restyling completo para alejarse del look & feel por defecto\n- Wrapper con API de inputs/outputs propio por componente (breadcrumb, anclas, tabs, buscador)\n- Documentación en Storybook 10\n- Fix de bug en la gestión de outputs"
+            },
+            {
+              "title": "Rediseño — septiembre",
+              "general": "Componentes de interacción del rediseño — pills, stepper, progress bar y link list — más una directiva propia de scrollbar, la única pieza construida sin partir de Kendo.\n- Mismo patrón de restyling + API propio, documentado en Storybook\n- Varios bugs de formularios y uno de color en tabla resueltos en paralelo",
+              "technical": "Mismo patrón sobre Kendo UI aplicado a pills, stepper, progress bar y link list, documentado en Storybook 10.\n- Directiva de scrollbar construida desde cero (sin base Kendo)\n- Bugs corregidos: validación/estado de inputs, color mal aplicado en celda de tabla"
+            }
+          ]
         },
         "Moontech Industrial Solutions": {
           "entries": [
@@ -694,8 +707,19 @@
       "experience": {
         "Hiberus": {
           "role": "Angular Frontend Developer",
-          "description": "Development and maintenance of the shared component library and Storybook consumed by multiple internal teams at Eroski, as part of the client's design system redesign. Frontend with Angular 20 (signals) on top of Kendo UI (pre-existing), Lucide icons and Figma specs. Daily ceremonies with the management and UX/UI teams. Still in the early weeks: for now, implementing specs and reviewing, no significant own contributions yet.",
-          "entries": []
+          "description": "Developing and maintaining Eroski's Angular 20 frontend core, including the shared component library. Currently focused on redesigning that library together with the UX/UI team, who design new components in Figma on top of Kendo UI.",
+          "entries": [
+            {
+              "title": "Redesign — August",
+              "general": "Navigation components for Eroski's new design system — breadcrumb, anchors, tabs and search — documented in Storybook for other teams to consume.\n- Built on Kendo UI, but with full restyling and a custom input/output API tailored to each real use case\n- Integrated into the joint review flow with the UX/UI team",
+              "technical": "Angular 20 with signals on top of Kendo UI.\n- Full restyling to move away from the default look & feel\n- Custom input/output API wrapper per component (breadcrumb, anchors, tabs, search)\n- Documented in Storybook 10\n- Fixed a bug in output handling"
+            },
+            {
+              "title": "Redesign — September",
+              "general": "Interaction components for the redesign — pills, stepper, progress bar and link list — plus a custom scrollbar directive, the only piece built without starting from Kendo.\n- Same restyling + custom API pattern, documented in Storybook\n- Several form bugs and one table color bug fixed in parallel",
+              "technical": "Same pattern on top of Kendo UI applied to pills, stepper, progress bar and link list, documented in Storybook 10.\n- Scrollbar directive built from scratch (no Kendo base)\n- Bugs fixed: input validation/state, wrong color applied in a table cell"
+            }
+          ]
         },
         "Moontech Industrial Solutions": {
           "role": "Fullstack Developer",
