@@ -37,6 +37,30 @@
   ],
   "experience": [
     {
+      "company": "Hiberus",
+      "role": "Frontend Developer Angular",
+      "location": "Zaragoza",
+      "startDate": "2026-08",
+      "endDate": null,
+      "companyUrl": "https://www.hiberus.com/",
+      "description": "Desarrollo y mantenimiento del core de frontend de Eroski en Angular 20, que incluye la librería de componentes compartida. Actualmente centrado en el rediseño de esa librería junto al equipo de UX/UI, que diseña los componentes nuevos en Figma sobre una base de Kendo UI.",
+      "tech": [
+        "Angular 20",
+        "TypeScript",
+        "Signals",
+        "Kendo UI",
+        "Storybook 10",
+        "Jest",
+        "Lucide",
+        "Figma",
+        "GitLab",
+        "Jenkins",
+        "JFrog",
+        "SonarQube",
+        "Jira"
+      ]
+    },
+    {
       "company": "Moontech Industrial Solutions",
       "role": "Desarrollador Fullstack",
       "location": "Zaragoza",
@@ -150,6 +174,19 @@
         "/screenshots/invoice-generator/03-preview.png",
         "/screenshots/invoice-generator/05-mobile-list.png"
       ]
+    },
+    {
+      "name": "Oxenfree Subtitles Fix",
+      "tech": [
+        "Reverse Engineering",
+        ".NET Decompilation (ILSpy)",
+        "Unity AssetBundle Analysis",
+        "Windows Batch",
+        "Python"
+      ],
+      "tags": ["Reverse Engineering", "Community Fix", "Windows"],
+      "url": "https://github.com/CristianGarciaVillaraco/oxenfree-spanish-subs-fix/releases/latest",
+      "repo": "https://github.com/CristianGarciaVillaraco/oxenfree-spanish-subs-fix"
     }
   ],
   "education": [
@@ -356,9 +393,33 @@
             "PWA instalable en móvil y escritorio",
             "Sync opcional entre dispositivos con Cloudflare Workers D1"
           ]
+        },
+        "Oxenfree Subtitles Fix": {
+          "tagline": "Fix de subtítulos con ingeniería inversa (Unity 6, .NET)",
+          "description": "Mini-mod público para Oxenfree en Steam donde los subtítulos NPC dejaron de aparecer en idiomas con doblaje tras la migración del juego a Unity 6. Diagnóstico end-to-end: decompilación de Assembly-CSharp.dll con ILSpy, análisis binario de bundles Unity con Python, reverse-engineering del hash djb2-xor de Unity PlayerPrefs. Distribución vía GitHub Release + Steam Community Guide bilingüe + reporte oficial al estudio.",
+          "highlights": [
+            "Decompilación .NET con ilspycmd sobre Assembly-CSharp.dll para localizar la causa raíz",
+            "Reverse-engineering del hash de Unity PlayerPrefs (djb2-xor) por brute-force contra claves conocidas",
+            "Análisis binario de bundles Unity con Python (formato UnityFS + LZ4)",
+            "Publicado como fix público: GitHub Release, Steam Community Guide ES/EN y reporte al estudio"
+          ]
         }
       },
       "experience": {
+        "Hiberus": {
+          "entries": [
+            {
+              "title": "Rediseño — agosto",
+              "general": "Componentes de navegación del nuevo sistema de diseño de Eroski — breadcrumb, anclas, tabs y buscador — documentados en Storybook para que los consuma el resto de equipos.\n- Partiendo de Kendo UI, pero con restyling completo y API de inputs/outputs propio, adaptado a cada caso de uso real\n- Integrados en el flujo de revisión conjunto con el equipo de UX/UI",
+              "technical": "Angular 20 con signals sobre Kendo UI.\n- Restyling completo para alejarse del look & feel por defecto\n- Wrapper con API de inputs/outputs propio por componente (breadcrumb, anclas, tabs, buscador)\n- Documentación en Storybook 10\n- Fix de bug en la gestión de outputs"
+            },
+            {
+              "title": "Rediseño — septiembre",
+              "general": "Componentes de interacción del rediseño — pills, stepper, progress bar y link list — más una directiva propia de scrollbar, la única pieza construida sin partir de Kendo.\n- Mismo patrón de restyling + API propio, documentado en Storybook\n- Varios bugs de formularios y uno de color en tabla resueltos en paralelo",
+              "technical": "Mismo patrón sobre Kendo UI aplicado a pills, stepper, progress bar y link list, documentado en Storybook 10.\n- Directiva de scrollbar construida desde cero (sin base Kendo)\n- Bugs corregidos: validación/estado de inputs, color mal aplicado en celda de tabla"
+            }
+          ]
+        },
         "Moontech Industrial Solutions": {
           "entries": [
             {
@@ -631,9 +692,35 @@
             "Installable PWA on mobile and desktop",
             "Optional multi-device sync with Cloudflare Workers D1"
           ]
+        },
+        "Oxenfree Subtitles Fix": {
+          "tagline": "Subtitle fix through reverse engineering (Unity 6, .NET)",
+          "description": "Public community fix for Oxenfree on Steam where NPC subtitles stopped appearing in dubbed languages after the game's migration to Unity 6. End-to-end diagnosis: Assembly-CSharp.dll decompilation with ILSpy, binary analysis of Unity bundles with Python, and reverse-engineering of the Unity PlayerPrefs djb2-xor hash. Distributed via GitHub Release, bilingual Steam Community Guide and official bug report to the studio.",
+          "highlights": [
+            ".NET decompilation with ilspycmd on Assembly-CSharp.dll to pinpoint the root cause",
+            "Reverse-engineered the Unity PlayerPrefs hash (djb2-xor) via brute-force against known keys",
+            "Binary analysis of Unity asset bundles with Python (UnityFS + LZ4)",
+            "Shipped as a public fix: GitHub Release, ES/EN Steam Community Guide and studio bug report"
+          ]
         }
       },
       "experience": {
+        "Hiberus": {
+          "role": "Angular Frontend Developer",
+          "description": "Developing and maintaining Eroski's Angular 20 frontend core, including the shared component library. Currently focused on redesigning that library together with the UX/UI team, who design new components in Figma on top of Kendo UI.",
+          "entries": [
+            {
+              "title": "Redesign — August",
+              "general": "Navigation components for Eroski's new design system — breadcrumb, anchors, tabs and search — documented in Storybook for other teams to consume.\n- Built on Kendo UI, but with full restyling and a custom input/output API tailored to each real use case\n- Integrated into the joint review flow with the UX/UI team",
+              "technical": "Angular 20 with signals on top of Kendo UI.\n- Full restyling to move away from the default look & feel\n- Custom input/output API wrapper per component (breadcrumb, anchors, tabs, search)\n- Documented in Storybook 10\n- Fixed a bug in output handling"
+            },
+            {
+              "title": "Redesign — September",
+              "general": "Interaction components for the redesign — pills, stepper, progress bar and link list — plus a custom scrollbar directive, the only piece built without starting from Kendo.\n- Same restyling + custom API pattern, documented in Storybook\n- Several form bugs and one table color bug fixed in parallel",
+              "technical": "Same pattern on top of Kendo UI applied to pills, stepper, progress bar and link list, documented in Storybook 10.\n- Scrollbar directive built from scratch (no Kendo base)\n- Bugs fixed: input validation/state, wrong color applied in a table cell"
+            }
+          ]
+        },
         "Moontech Industrial Solutions": {
           "role": "Fullstack Developer",
           "description": "Building web interfaces with Angular 18/19 in a microfrontend architecture (shell + shared component library) for the ERIMS robotic fleet management system (AGVs/AMRs). Implementing internal Node.js applications for robotic control logic configuration with MongoDB. Creating JavaScript functions for intralogistics orchestration and industrial process automation.",
